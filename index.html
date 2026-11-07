@@ -1,17 +1,746 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gosnomer16.ru</title>
-    <script>
-        if (location.protocol !== 'https:') {
-            location.replace('https:' + window.location.href.substring(window.location.protocol.length));
-        }
-    </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Изготовим дубликат госномера за 5 минут в Казани и Набережных Челнах. В реестре изготовителей МВД, по ГОСТ Р 50577-2018. Только СТС и паспорт. От 1000 ₽.">
+<meta name="theme-color" content="#FFFFFF">
+<!-- Яндекс Метрика: вставьте код счётчика сюда и укажите номер в YM_ID внизу страницы -->
+<title>Дубликаты госномеров за 5 минут в Казани и Набережных Челнах | ГОСНОМЕР16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Roboto+Condensed:wght@700;800&family=Unbounded:wght@700&display=swap">
+<style>
+/* Лендинг ГОСНОМЕР16. Одна сознательная гамма: асфальтово-светлые секции, чёрные секции товаров и контактов, дорожный жёлтый на действиях. */
+:root{
+  --ink:#15171A; --ink-2:#3B4046; --muted:#596067; --line:#D3D6CF; --line-2:#C9CCC5;
+  --bg:#EFF0EC; --white:#FFFFFF; --soft:#E5E7E1;
+  --black:#0B0C0E; --dark:#121417; --card-d:#17191C; --line-d:rgba(255,255,255,.14);
+  --light:#F2F3EF; --muted-d:#A9AEB3; --muted-d2:#8E949A;
+  --accent:#F2C200; --accent-h:#FFD21F; --link:#1B56B5; --ok:#24774A; --warn:#9A5300;
+  --f-body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-head:"Roboto Condensed","Arial Narrow","Helvetica Neue",sans-serif;
+  --f-logo:"Unbounded","Arial Black",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gut:max(16px, min(4vw, 48px));
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--white)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px;border-radius:6px}
+.dark :focus-visible{outline-color:#8AB0F2}
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(var(--gut), env(safe-area-inset-left,0px));padding-right:max(var(--gut), env(safe-area-inset-right,0px))}
+.eb{font:500 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.h2{font-family:var(--f-head);font-weight:800;text-transform:uppercase;font-size:clamp(34px,4.6vw,60px);line-height:.95;letter-spacing:-.005em}
+.hl{background:linear-gradient(transparent 58%,var(--accent) 58% 90%,transparent 90%);padding:0 .04em}
+.y{color:var(--accent)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:12px;border:1px solid transparent;font:600 16px/1.2 var(--f-body);text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s,transform .1s;text-align:left}
+.btn:active{transform:translateY(1px)}
+.btn-y{background:var(--accent);color:var(--ink)}
+.btn-y:hover{background:var(--accent-h)}
+.btn-k{background:var(--ink);color:var(--white)}
+.btn-k:hover{background:#000}
+.btn-o{background:var(--white);border-color:#B9BDB5;color:var(--ink)}
+.btn-o:hover{border-color:var(--ink)}
+.btn-od{background:transparent;border-color:rgba(255,255,255,.22);color:var(--light)}
+.btn-od:hover{border-color:rgba(255,255,255,.55)}
+.stack3{display:flex;flex:none}
+.stack3 img{width:30px;height:30px;border-radius:50%;box-shadow:0 0 0 3px var(--ring,#121417)}
+.stack3 img+img{margin-left:-9px}
+
+/* header */
+.hdr{position:relative;z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
+.hdr-in{display:flex;align-items:center;gap:20px;min-height:84px}
+.logo{font-family:var(--f-logo);font-weight:700;font-size:24px;letter-spacing:-.01em;text-decoration:none;white-space:nowrap;padding-right:12px}
+.addr{display:flex;padding:0 26px;border-left:1px solid var(--line)}
+.addr-t{display:flex;flex-direction:column;gap:2px}
+.addr .city{display:inline-flex;align-items:center;gap:4px;width:fit-content;padding:0;border:0;background:none;cursor:pointer;text-align:left;font:500 11px/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.addr .city svg{display:none;flex:none}
+.addr a{font-weight:600;font-size:18px;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
+.addr .street{display:inline-flex;align-items:center;gap:5px;width:fit-content;padding:0;border:0;background:none;font:400 13px/1.4 var(--f-body);color:var(--muted);white-space:nowrap;text-align:left;cursor:pointer}
+.addr .street svg{flex:none}
+.addr .street span{text-decoration:underline dashed #A9AEA5;text-underline-offset:3px}
+.addr .street:hover{color:var(--ink)}
+.addr .street:hover span{text-decoration-color:var(--ink)}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:14px}
+.msgs{display:flex;gap:8px}
+.msgs button{width:44px;height:44px;padding:0;border:0;border-radius:50%;background:none;cursor:pointer;transition:transform .15s}
+.msgs button:hover{transform:translateY(-2px)}
+.msgs img{width:44px;height:44px}
+.note{font-size:14px;line-height:1.3;color:var(--ink-2);white-space:nowrap}
+.hdr-mob{display:none;gap:8px;margin-left:auto}
+.icon-btn{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--white);cursor:pointer}
+.icon-btn.y{background:var(--accent);border-color:var(--accent)}
+@media (max-width:1200px){.hdr-right .note{display:none}.addr{padding:0 20px}}
+@media (max-width:1080px){.addr .street{display:none}.addr .city svg{display:block}.addr .city span{text-decoration:underline dashed #A9AEA5;text-underline-offset:3px}.addr .city:hover{color:var(--ink)}.addr{padding:0 16px}.addr a{font-size:17px}.hdr-in{gap:14px}.logo{padding-right:4px}}
+@media (max-width:900px){.logo{font-size:20px}.msgs{gap:6px}.msgs button,.msgs img{width:40px;height:40px}.addr a{font-size:16px}}
+.brand{display:flex;flex-direction:column;gap:3px;min-width:0}
+.mcity{display:none;align-items:center;gap:4px;width:fit-content;padding:0;border:0;background:none;cursor:pointer;font:500 13px/1.3 var(--f-body);color:var(--muted);white-space:nowrap}
+.mcity span{text-decoration:underline dashed #A9AEA5;text-underline-offset:3px}
+.mstack{display:grid;place-items:center;height:44px;padding:0 2px;border:0;background:none;cursor:pointer;--ring:#FFFFFF}
+.mstack .stack3 img{width:34px;height:34px;position:relative}
+.mstack .stack3 img:nth-child(1){z-index:3}.mstack .stack3 img:nth-child(2){z-index:2}
+@media (max-width:820px){.hdr-right{display:none}.hdr-mob{display:flex;align-items:center}.hdr-mob .icon-btn{display:none}.hdr-in{min-height:64px;gap:10px}.logo{font-size:18px}.addr{padding:0 12px}.addr a{font-size:15px}}
+.mcities{display:none;flex-direction:column;gap:7px;min-width:0}
+.mcities .city{display:inline-flex;align-items:center;gap:4px;width:fit-content;padding:0;border:0;background:none;cursor:pointer;text-align:left;font:500 11px/1.3 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.mcities .city svg{flex:none}
+.mcities .city span{text-decoration:underline dashed #A9AEA5;text-underline-offset:3px}
+.mcities .city:hover{color:var(--ink)}
+.mcities i{font-style:normal}.mcities .short{display:none}
+@media (max-width:700px){.addr{display:none}.hdr-mob .icon-btn{display:grid}.mcities{display:flex}.logo{font-size:18px;padding-right:0}.mstack .stack3 img{width:32px;height:32px}}
+@media (max-width:480px){.mcities .full{display:none}.mcities .short{display:inline}.hdr-in{gap:8px}.hdr-mob{gap:6px}.logo{font-size:16px}.icon-btn{width:40px;height:40px}.mstack .stack3 img{width:28px;height:28px}.mstack .stack3 img+img{margin-left:-8px}}
+@media (max-width:399px){.mcities{display:none}.mcity{display:inline-flex}.logo{font-size:18px}.mstack .stack3 img{width:30px;height:30px}.icon-btn{width:42px;height:42px}}
+@media (max-width:340px){.logo{font-size:16px}.mstack .stack3 img{width:26px;height:26px}.icon-btn{width:38px;height:38px}}
+
+/* hero */
+.hero{background-color:var(--dark);background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;color:var(--light)}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:44px;align-items:center;padding-block:56px 72px}
+.hero-text{min-width:0;display:flex;flex-direction:column;gap:24px}
+.hero h1{font-family:var(--f-head);font-weight:800;text-transform:uppercase;font-size:clamp(52px,6.4vw,84px);line-height:.92;letter-spacing:-.01em}
+.hero .sub{font-size:18px;color:#C9CCCF;max-width:48ch}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:17px}
+.checks li{display:flex;gap:12px;align-items:center}
+.checks svg{flex:none}
+.rate{display:flex;align-items:center;gap:14px;width:fit-content;max-width:100%;padding:10px 16px 10px 12px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line-d);color:var(--light);cursor:pointer;text-align:left;transition:border-color .15s,background .15s}
+.rate:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.07)}
+.lg3{display:flex;flex:none}
+.lg3 img{width:34px;height:34px;border-radius:9px;box-shadow:0 0 0 3px var(--dark)}
+.lg3 img+img{margin-left:-8px}
+.rate b{font-family:var(--f-head);font-size:24px}
+.stars{color:var(--accent);font-size:13px;letter-spacing:1px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;max-width:600px}
+.cta .btn{flex:1 1 220px;min-height:72px;border-radius:14px;font-size:18px}
+.cta .btn-y{box-shadow:0 14px 30px -14px rgba(242,194,0,.55)}
+.cta .btn small{display:block;font-size:14px;font-weight:400;color:var(--muted-d)}
+.mosaic{min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:12px;height:600px}
+.mosaic figure{position:relative;margin:0;border-radius:20px;overflow:hidden;background:#24282C}
+.mosaic figure:first-child{grid-row:1/3}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic figure:first-child img{object-position:50% 15%}
+.mosaic figure:nth-child(n+2) img{object-position:50% 62%}
+@media (max-width:1040px){.hero-in{grid-template-columns:minmax(0,1fr);padding-block:32px 64px;gap:36px}.mosaic{order:-1;height:min(600px,60vw)}.hero h1{font-size:clamp(44px,6.8vw,84px);text-wrap:wrap}.hbr{display:none}}
+@media (max-width:640px){.hero h1{font-size:min(52px,13.4vw)}}
+@media (max-width:640px){.hero-in{padding-block:16px 48px;gap:28px}.mosaic{height:360px;gap:8px}.mosaic figure{border-radius:14px}.cta .btn{min-height:64px}}
+
+
+/* trust */
+.trust{padding-block:72px 64px;display:flex;flex-direction:column;gap:36px}
+.trust-top{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between}
+.trust-top>div:first-child{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.trust-top p{font-size:18px;color:var(--ink-2);max-width:52ch}
+.reg{flex:0 1 410px;min-width:0;display:flex;align-items:center;gap:22px;padding:18px 22px 18px 20px;border-radius:16px;background:var(--white);border:1px solid var(--line)}
+.doc-thumb{position:relative;flex:none;width:84px;padding:0;border:0;background:none;cursor:zoom-in}
+.sheet{background:var(--white);border:1px solid var(--line);border-radius:6px;box-shadow:0 14px 30px -18px rgba(21,23,26,.35)}
+.doc-thumb .sheet{display:flex;flex-direction:column;gap:5px;width:84px;aspect-ratio:210/297;padding:9px 8px;transform:rotate(-3deg);text-align:center}
+.doc-thumb .sheet b{font:800 7px/1.15 var(--f-head);text-transform:uppercase}
+.lines{display:flex;flex-direction:column;gap:4px}
+.lines i{display:block;height:4px;border-radius:2px;background:var(--soft)}
+.lines i:nth-child(3n){width:72%}.lines i:nth-child(4n){width:86%}
+.doc-thumb .zoom{position:absolute;right:-8px;bottom:-6px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--white);border:1px solid var(--line);transition:background .15s,color .15s}
+.doc-thumb:hover .zoom{background:var(--ink);color:var(--white)}
+.reg .k{font:500 11px/1.4 var(--f-mono);letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.reg .btn{min-height:44px;padding:0 16px;font-size:15px;border-radius:10px;width:fit-content;margin-top:8px}
+.car-head{display:flex;align-items:center;gap:12px}
+.car-head span{font-size:14px;color:var(--muted)}
+.arrows{margin-left:auto;display:flex;gap:10px}
+.arrow{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid var(--line-2);background:var(--white);cursor:pointer}
+.arrow:hover{border-color:var(--ink)}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:none;width:270px;height:380px;border-radius:16px;scroll-snap-align:start;position:relative;overflow:hidden;display:grid;place-items:center}
+.slide.ph{background:repeating-linear-gradient(135deg,#55595E 0 14px,#4E5257 14px 28px);color:#EDEEEA;font-weight:600}
+.slide.rv{background:var(--white);border:1px solid var(--line);color:var(--muted);font-weight:600}
+.slide .tag{position:absolute;left:12px;top:12px;display:flex;align-items:center;gap:8px;padding:5px 10px 5px 5px;border-radius:99px;background:var(--bg);font-size:12px;font-weight:600;color:var(--ink)}
+.slide .tag img{width:22px;height:22px;border-radius:6px}
+.slide .city{position:absolute;left:12px;bottom:12px;padding:7px 10px;border-radius:99px;background:rgba(18,20,23,.75);color:var(--light);font-size:12px;font-weight:500}
+@media (max-width:640px){.slide{width:78vw;max-width:300px}.arrows{display:none}}
+
+/* products */
+.dark{background:var(--black);color:var(--light)}
+.products{padding-block:88px;display:flex;flex-direction:column;gap:40px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:1000px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.grid3{grid-template-columns:1fr}}
+.pcard{display:flex;flex-direction:column;border-radius:20px;background:var(--white);color:var(--ink);overflow:hidden;transition:transform .15s}
+.pcard:hover{transform:translateY(-3px)}
+.pphoto{position:relative;margin-bottom:-1px;height:240px;display:grid;place-items:center;padding:0 28px 40px;background:radial-gradient(ellipse at 50% 45%,#3A3F45 0%,#24282C 70%),#24282C}
+.pphoto .pw{filter:drop-shadow(0 16px 18px rgba(0,0,0,.55));transform:rotate(-3deg)}
+.pphoto h3{position:absolute;z-index:1;left:0;bottom:-2px;padding:14px 24px 6px;background:var(--white);border-top-right-radius:16px;font-family:var(--f-head);font-weight:800;font-size:24px;line-height:1.1;color:var(--ink);text-transform:uppercase}
+.pbody{flex:1;display:flex;flex-direction:column;gap:14px;padding:16px 24px 6px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{padding:7px 14px;border-radius:10px;font:800 14px/1 var(--f-head);text-transform:uppercase;letter-spacing:.02em}
+.tags span:first-child{background:var(--ink);color:var(--white)}
+.tags span:last-child{background:var(--bg);color:var(--ink)}
+.pbody p{font-size:15px;color:var(--ink-2);line-height:1.55}
+.pfoot{display:flex;align-items:center;gap:12px;padding:16px 24px 24px}
+.pcard{container-type:inline-size}
+.pfoot b{display:block;font-family:var(--f-head);font-size:clamp(19px, calc(16.4cqi - 29px), 28px);line-height:1.1;white-space:nowrap}
+.pfoot small{font-size:13px;color:var(--muted)}
+.pfoot .btn{margin-left:auto;min-height:48px;padding:0 18px;flex:none}
+.other{display:flex;flex-direction:column;border-radius:20px;overflow:hidden;text-decoration:none;color:var(--ink);min-height:520px;border:0;padding:0;text-align:left;cursor:pointer;background:var(--white);transition:transform .15s}
+.other:hover{transform:translateY(-3px)}
+.other .top{flex:1 1 52%;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:36px 32px 32px;background:#23272B;color:var(--light);width:100%}
+.other .plus{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25)}
+.other .top b{font-family:var(--f-head);font-weight:800;font-size:34px;line-height:1.02;text-transform:uppercase}
+.other .bot{flex:1 1 48%;display:flex;flex-direction:column;gap:12px;padding:28px 32px;width:100%}
+.other .bot>b{font-size:26px;line-height:1.15}
+.other .bot>span{font-size:15px;color:var(--muted)}
+.other .row{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:16px;border-top:1px solid #E3E5E0}
+.other .go{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--accent);transition:transform .2s}
+.other:hover .go{transform:rotate(45deg)}
+
+/* plates */
+.pl{container-type:inline-size;width:100%}
+.pl-in{display:grid;color:#0D0E10;font-family:var(--f-head);font-weight:700;line-height:1;background:linear-gradient(172deg,#fff 0%,#FBFBF8 45%,#E2E3DF 100%);border:.62cqw solid #0D0E10;border-radius:2cqw;box-shadow:0 0 0 .5cqw #FBFBF8;overflow:hidden}
+.pl-in.yellow{background:linear-gradient(172deg,#FFE27A 0%,#F3C300 50%,#D9A900 100%);box-shadow:0 0 0 .5cqw #F3C300}
+.pl-in.black{background:#151618;color:#ECECE8;border-color:#ECECE8;box-shadow:0 0 0 .5cqw #151618}
+.pl-chars{display:flex;align-items:baseline;gap:1.3cqw;white-space:nowrap}
+.pl-reg{display:grid;grid-template-rows:1fr auto;justify-items:center;align-items:center;border-left:.5cqw solid currentColor}
+.pl-rus{display:flex;align-items:center;letter-spacing:.06em}
+.flag{display:inline-block;background:linear-gradient(#fff 0 33.4%,#1C57A5 33.4% 66.6%,#D52B1E 66.6%);box-shadow:0 0 0 .18cqw #0D0E10}
+.line{aspect-ratio:520/112;grid-template-columns:1fr 27cqw}
+.line.noreg{grid-template-columns:1fr}
+.line .pl-main{display:grid;place-items:center;padding-top:.6cqw}
+.line .l{font-size:14.8cqw}.line .d{font-size:18.6cqw}
+.line .pl-reg{padding:.4cqw 0 1.3cqw}
+.line .r{font-size:10.6cqw;margin-top:.8cqw}.line .r2{font-size:13cqw}
+.line .pl-rus{gap:1cqw;font-size:4.3cqw}.line .flag{width:6.2cqw;height:3.7cqw}
+.sq{aspect-ratio:290/170;grid-template-columns:1fr 44cqw;grid-template-rows:53% 47%}
+.sq .pl-top,.mo .pl-top{grid-column:1/-1;display:grid;place-items:center}
+.sq .pl-top{padding-top:2.5cqw}.mo .pl-top{padding-top:3cqw}
+.sq .pl-bot,.mo .pl-bot{display:grid;place-items:center}
+.sq .l{font-size:23cqw}.sq .d{font-size:28cqw}
+.sq .pl-reg{padding:0 0 3.2cqw}.sq .r{font-size:15cqw;margin-top:.5cqw}.sq .r2{font-size:19cqw}
+.sq .pl-rus{gap:1.6cqw;font-size:7cqw}.sq .flag{width:10cqw;height:6cqw}
+.mo{aspect-ratio:190/145;grid-template-columns:1fr 46cqw;grid-template-rows:54% 46%}
+.mo .l{font-size:27cqw}.mo .d{font-size:35cqw}
+.mo .pl-reg{padding:0 0 3.6cqw}.mo .r{font-size:16cqw;margin-top:.5cqw}.mo .r2{font-size:21cqw}
+.mo .pl-rus{gap:1.8cqw;font-size:7.6cqw}.mo .flag{width:11cqw;height:6.6cqw}
+
+/* docs, steps, faq */
+.sec{padding-block:88px;display:flex;flex-direction:column;gap:36px}
+.sec-head{display:flex;flex-direction:column;gap:14px}
+.docs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.doc{display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:20px;background:var(--white);border:1px solid var(--line)}
+.doc.main{background:var(--ink);border-color:var(--ink);color:var(--light)}
+.doc b.t{font-size:20px;line-height:1.25}
+.doc p{color:var(--ink-2)}
+.doc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.doc li{display:flex;gap:12px}
+.tick{flex:none;width:22px;height:22px;margin-top:1px;border-radius:6px;background:var(--accent);display:grid;place-items:center}
+.doc .foot{margin-top:auto;font-size:14px;color:var(--muted-d)}
+.notice{display:flex;gap:14px;align-items:center;padding:16px 20px;border-radius:14px;border:1px dashed #B9BDB5;font-size:15px;color:var(--ink-2)}
+.notice b{flex:none;padding:6px 9px;border-radius:6px;background:var(--ink);color:var(--white);font:500 12px/1 var(--f-mono)}
+@media (max-width:900px){.docs{grid-template-columns:1fr}}
+.steps-sec{background:var(--white);border-block:1px solid #E1E3DD}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;margin:0;padding:0}
+.steps li{position:relative;display:flex;flex-direction:column;gap:10px;padding-right:24px}
+.steps li:not(:last-child)::before{content:"";position:absolute;top:19px;left:52px;right:12px;height:2px;border-radius:1px;background:var(--line-2)}
+.steps .num{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--soft);font:800 18px/1 var(--f-head);margin-bottom:6px}
+.steps li:first-child .num{background:var(--accent)}
+.steps .time{font:500 12px/1 var(--f-mono);color:var(--muted)}
+.steps h3{font-family:var(--f-head);font-size:24px;text-transform:uppercase;line-height:1.1}
+.steps p{font-size:15px;color:var(--ink-2);max-width:30ch}
+@media (max-width:900px){.steps{grid-template-columns:1fr}.steps li{padding:0 0 32px 60px;gap:8px}.steps li:last-child{padding-bottom:0}.steps .num{position:absolute;left:0;top:0;margin:0}.steps .time{padding-top:2px}.steps li:not(:last-child)::before{top:50px;bottom:10px;left:19px;right:auto;width:2px;height:auto}}
+.row-btns{display:flex;flex-wrap:wrap;gap:12px}
+.faq{display:flex;flex-wrap:wrap;gap:40px 64px;align-items:flex-start}
+.faq-side{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.faq-side p{color:var(--ink-2);max-width:36ch}
+.qa{flex:1.7 1 520px;min-width:0;border-top:1px solid var(--line-2)}
+.qa details{border-bottom:1px solid var(--line-2)}
+.qa summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;cursor:pointer;font-weight:600;font-size:18px;line-height:1.35}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary i{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#E1E3DD;font-style:normal;transition:background .15s}
+.qa summary i::before{content:"+";font:600 20px/1 var(--f-body)}
+.qa details[open] summary i{background:var(--accent)}
+.qa details[open] summary i::before{content:"−"}
+.qa p{padding:0 56px 22px 0;color:var(--ink-2);max-width:64ch}
+
+/* contacts, footer */
+.deliv{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:6px}
+.deliv p{font-size:18px;color:#C9CCCF;max-width:56ch}
+.branches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:900px){.branches{grid-template-columns:1fr}}
+.branch{display:flex;flex-direction:column;border-radius:20px;background:var(--card-d);overflow:hidden}
+.branch .ph{position:relative;aspect-ratio:16/9;display:grid;place-items:center;padding:24px;text-align:center;background:repeating-linear-gradient(135deg,#2A2F34 0 16px,#24282C 16px 32px);font:500 12px/1.6 var(--f-mono);color:var(--muted-d2)}
+.branch .ph .c{position:absolute;left:16px;top:16px;padding:7px 12px;border-radius:99px;background:var(--accent);color:var(--ink);font:600 13px/1 var(--f-body)}
+.branch .body{display:flex;flex-direction:column;gap:16px;padding:24px}
+.branch .body b{font-size:20px}
+.branch .body small{display:block;font-size:14px;color:var(--muted-d)}
+.branch .tel{font-family:var(--f-head);font-weight:800;font-size:30px;text-decoration:none;width:fit-content;font-variant-numeric:tabular-nums}
+.branch .acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.branch .acts img{width:44px;height:44px}
+.branch .acts .btn{margin-left:auto;min-height:46px;font-size:15px}
+.ftr{border-top:1px solid rgba(255,255,255,.1);color:#B9BDC1}
+.ftr a{color:#B9BDC1;text-decoration:none}.ftr a:hover{color:var(--white)}
+.ftr-top{display:flex;flex-wrap:wrap;gap:28px 56px;align-items:flex-start;padding-block:48px 32px}
+.ftr-bot{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;padding-block:22px 40px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#7E848A}
+
+/* mobile bar */
+.mbar{display:none}
+@media (max-width:820px){
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--white);border-top:1px solid var(--line);
+    padding:10px max(12px, env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px, env(safe-area-inset-left,0px))}
+  .mbar .btn{min-height:50px;padding:0 10px;font-size:16px;justify-content:center;gap:8px}
+  .mbar .stack3 img{width:26px;height:26px;position:relative;box-shadow:0 0 0 2px var(--ring)}
+  .mbar .stack3 img+img{margin-left:-7px}
+  .mbar .stack3 img:nth-child(1){z-index:3}.mbar .stack3 img:nth-child(2){z-index:2}
+  body{padding-bottom:80px}
+}
+
+/* dialogs */
+.dlg{border:0;padding:0;border-radius:18px;width:min(420px, calc(100vw - 32px));max-height:calc(100dvh - 32px);background:var(--white);color:var(--ink);box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+.dlg::backdrop{background:rgba(11,12,14,.62)}
+.dlg-in{display:flex;flex-direction:column;gap:14px;padding:20px}
+.dlg-head{display:flex;align-items:flex-start;gap:12px}
+.dlg-head b{display:block;font-size:18px;line-height:1.3;color:var(--ink)}
+.dlg-head span{display:block;font-size:13px;color:var(--muted)}
+.x{margin-left:auto;flex:none;display:grid;place-items:center;width:40px;height:40px;border:0;border-radius:10px;background:var(--bg);cursor:pointer}
+.seg{display:flex;gap:4px;padding:4px;border-radius:10px;background:var(--soft)}
+.seg button{flex:1;min-height:40px;border:0;border-radius:7px;background:transparent;color:var(--muted);font-weight:600;font-size:14px;cursor:pointer;white-space:nowrap;padding:0 4px}
+@media (max-width:400px){.seg button{font-size:13px}}
+@media (max-width:340px){.seg button{font-size:12px}}
+.seg button[aria-pressed="true"]{background:var(--white);color:var(--ink);box-shadow:0 1px 3px rgba(21,23,26,.15)}
+.opt{display:flex;align-items:center;gap:12px;min-height:58px;padding:8px 14px;border-radius:12px;background:var(--bg);text-decoration:none;color:var(--ink);transition:background .15s}
+.opt:hover{background:var(--soft)}
+button.opt{width:100%;border:0;font:inherit;text-align:left;cursor:pointer}
+.opt-pin{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:9px;background:var(--white)}
+.opt img{width:36px;height:36px;border-radius:9px;flex:none}
+.opt b{display:block;font-size:15px}
+.opt small{display:block;font-size:13px;color:var(--muted)}
+.opt .end{margin-left:auto;display:flex;align-items:center;gap:10px;font-family:var(--f-head);font-size:20px;font-weight:700}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;color:var(--muted)}
+.inp{min-height:52px;width:100%;border-radius:10px;border:1px solid var(--line);background:#F6F7F4;color:var(--ink);font:500 17px/1 var(--f-body);padding:0 14px}
+select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 23px,calc(100% - 14px) 23px;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px;font-size:16px}
+.inp:focus{outline:none;border-color:var(--link);box-shadow:0 0 0 3px rgba(27,86,181,.2)}
+.err{font-size:13px;color:var(--warn)}
+.fine{font-size:12px;color:var(--muted);line-height:1.4}
+.ok{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:12px;background:#EAF5EE}
+.ok b{color:var(--ok);font-size:17px}
+.pick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:4px 0}
+.pick a{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 4px;border-radius:14px;text-decoration:none;color:var(--ink);font-size:14px;font-weight:500;transition:background .15s}
+.pick a:hover{background:var(--bg)}
+.pick img,.pick-call{width:min(64px,100%);aspect-ratio:1;height:auto;border-radius:50%}
+.pick-call{display:grid;place-items:center;background:var(--accent)}
+.link-btn{align-self:center;padding:6px 4px;border:0;background:none;font:500 14px/1.3 var(--f-body);color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.link-btn:hover{color:var(--ink)}
+.dlg-photo{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;display:grid;place-items:center;background:repeating-linear-gradient(135deg,#E5E7E1 0 14px,#DCDED8 14px 28px);font:500 12px/1 var(--f-mono);color:var(--muted)}
+.dlg-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.br-info{display:flex;flex-direction:column;gap:4px}
+.br-info b{font-size:16px;font-weight:600}
+.hrs{display:block;font-size:14px;line-height:1.5;color:var(--muted);margin:2px 0 4px}
+.branch .hrs{color:var(--muted-d);margin-top:6px}
+.br-info a{font:800 26px/1.2 var(--f-head);text-decoration:none;width:fit-content}
+.br-msg{display:flex;align-items:center;gap:8px}
+.br-msg img{width:42px;height:42px}
+.br-msg span{margin-left:6px;font-size:14px;color:var(--muted)}
+.branch .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.branch .ph .c{z-index:1}
+.chk{display:flex;align-items:center;gap:12px;min-height:44px;font-size:16px;cursor:pointer}
+.chk input{width:22px;height:22px;margin:0;accent-color:var(--ink);flex:none}
+.chk.sm{align-items:flex-start;gap:10px;min-height:0;font-size:13px;line-height:1.45;color:var(--muted)}
+.chk.sm input{width:18px;height:18px;margin-top:1px}
+.big-doc{width:min(78vw, 460px);aspect-ratio:210/297;display:grid;place-items:center;margin:0 auto;font:500 12px/1.5 var(--f-mono);color:var(--warn)}
+.menu-nav{display:flex;flex-direction:column}
+.menu-nav a{padding:13px 0;border-bottom:1px solid #E3E5E0;text-decoration:none;font-size:18px;font-weight:500}
+@media (max-width:640px){
+  .dlg{margin:auto 0 0;width:100%;max-width:100%;border-radius:20px 20px 0 0;max-height:88dvh}
+  .dlg-in{padding:14px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+  .dlg-in::before{content:"";align-self:center;width:40px;height:4px;border-radius:2px;background:var(--line)}
+}
+</style>
 </head>
 <body>
-    <h1>Добро пожаловать на gosnomer16.ru!</h1>
-    <p>Сайт скоро будет готов...</p>
+
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <div class="brand"><a class="logo" href="#top">ГОСНОМЕР16</a><button class="mcity" type="button" data-open="addrs"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Наши адреса</span></button></div>
+    <div class="mcities"><button class="city" type="button" data-open="branch" data-branch="kzn"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Казань</span></button><button class="city" type="button" data-open="branch" data-branch="nch"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><i class="full">Набережные Челны</i><i class="short">Наб.Челны</i></span></button></div>
+    <div class="addr"><span class="addr-t"><button class="city" type="button" data-open="branch" data-branch="kzn"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Казань</span></button><a href="tel:+79534021053" data-goal="call_kzn">+7 (953) 402-10-53</a><button class="street" type="button" data-open="branch" data-branch="kzn"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>ул. Техническая, д. 120Дк1</span></button></span></div>
+    <div class="addr a2"><span class="addr-t"><button class="city" type="button" data-open="branch" data-branch="nch"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Набережные Челны</span></button><a href="tel:+79874140815" data-goal="call_nch">+7 (987) 414-08-15</a><button class="street" type="button" data-open="branch" data-branch="nch"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>ул. Машиностроительная, д. 22, стр. 5</span></button></span></div>
+    <div class="hdr-right">
+      <div class="msgs">
+        <button type="button" data-open="msg" data-messenger="wa" aria-label="Написать в WhatsApp"><img src="img/whatsapp.svg" alt=""></button>
+        <button type="button" data-open="msg" data-messenger="tg" aria-label="Написать в Telegram"><img src="img/telegram.svg" alt=""></button>
+        <button type="button" data-open="msg" data-messenger="max" aria-label="Написать в MAX"><img src="img/max.svg" alt=""></button>
+      </div>
+      <span class="note">Пишите,<br>мы на связи</span>
+    </div>
+    <div class="hdr-mob">
+      <button class="icon-btn y" type="button" data-open="call" aria-label="Позвонить"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></button>
+      <button class="mstack" type="button" data-open="msg" aria-label="Написать в мессенджер"><span class="stack3"><img src="img/max.svg" alt=""><img src="img/telegram.svg" alt=""><img src="img/whatsapp.svg" alt=""></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-text">
+        <h1>Изготовим <br class="hbr">госномер<br><span class="y">за 5 минут</span></h1>
+        <p class="sub">Стандартные, квадратные и другие типы номерных знаков. Работаем официально, мы в реестре изготовителей МВД.</p>
+        <ul class="checks">
+          <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2C200" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>По ГОСТ Р 50577-2018</li>
+          <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2C200" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Только СТС и паспорт, без снятия с учёта</li>
+          <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2C200" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Без очередей, ГИБДД и сдачи старых номеров</li>
+        </ul>
+        <button class="rate" type="button" data-open="reviews">
+          <span class="lg3"><img src="img/yandex-maps.svg" alt=""><img src="img/2gis.svg" alt=""><img src="img/avito.svg" alt=""></span>
+          <span style="display:flex;flex-direction:column;line-height:1.2"><span style="display:flex;align-items:baseline;gap:8px"><b>[4,9]</b><span class="stars">★★★★★</span></span><span style="font-size:13px;color:#C9CCCF">150+ отзывов на 3 площадках</span></span>
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9CCCF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+        <div class="cta">
+          <button class="btn btn-y" type="button" data-open="order">Оставить заявку</button>
+          <button class="btn btn-od" type="button" data-open="msg" style="--ring:#121417"><span class="stack3"><img src="img/whatsapp.svg" alt=""><img src="img/telegram.svg" alt=""><img src="img/max.svg" alt=""></span><span>Написать<small>Ответим быстро</small></span></button>
+        </div>
+      </div>
+      <div class="mosaic">
+        <figure><img src="img/hero-clients.webp" alt="Клиенты с готовыми номерами у вывески ГОСНОМЕР16" width="760" height="1350"></figure>
+        <figure><img src="img/hero-car.webp" alt="Автомобиль с новыми номерами у точки ГОСНОМЕР16" width="760" height="760" loading="lazy"></figure>
+        <figure><img src="img/hero-master.webp" alt="Мастер проверяет готовый номер у пресса" width="760" height="760" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="trust" class="wrap trust">
+    <div class="trust-top">
+      <div>
+        <span class="eb">Почему нам доверяют</span>
+        <h2 class="h2">Работаем <span class="hl">официально</span></h2>
+        <p>Дубликаты госномеров имеют право делать только компании из реестра изготовителей МВД. Мы в нём есть, проверить можно за минуту.</p>
+      </div>
+      <div class="reg">
+        <button class="doc-thumb" type="button" data-open="doc" aria-label="Увеличить свидетельство">
+          <span class="sheet"><b>Свидетельство</b><span class="lines"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="zoom"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8v6M8 11h6"/></svg></span>
+        </button>
+        <span style="display:flex;flex-direction:column;min-width:0"><span class="k">Реестр изготовителей МВД</span><b style="font-weight:600">Запись № [номер] от [дата]</b><a class="btn btn-k" href="#registry" target="_blank" rel="noopener">Проверить в реестре<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="car-head"><span>Фото клиентов и отзывы</span><span class="arrows"><button class="arrow" type="button" data-slide="-1" aria-label="Назад"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><button class="arrow" type="button" data-slide="1" aria-label="Вперёд"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></span></div>
+      <div class="track" id="track" tabindex="0" aria-label="Фото клиентов и отзывы"></div>
+    </div>
+  </section>
+
+  <section id="prices" class="dark">
+    <div class="wrap products">
+      <h2 class="h2">Виды номеров <span class="y">и цены</span></h2>
+      <div class="grid3" id="products"></div>
+    </div>
+  </section>
+
+  <section id="docs" class="wrap sec">
+    <div class="sec-head"><h2 class="h2">Документы для изготовления</h2></div>
+    <div class="docs">
+      <div class="doc main">
+        <b class="t">Если машина ваша</b>
+        <ul>
+          <li><span class="tick"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span><span>СТС или ПТС <span style="color:var(--muted-d)">(бумажный или выписка из ЭПТС)</span></span></li>
+          <li><span class="tick"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span><span>Паспорт или водительское удостоверение</span></li>
+        </ul>
+        <span class="foot">Можно прислать фото СТС заранее, оригинал покажете при получении</span>
+      </div>
+      <div class="doc"><b class="t">Если машина не ваша</b><p>СТС или ПТС на машину и доверенность от собственника. Подходит, если забираете номер за родственника или работодателя.</p></div>
+      <div class="doc"><b class="t">Для организаций</b><p>Доверенность от компании, оплата по счёту, закрывающие документы. Делаем партии для автопарков и такси.</p></div>
+    </div>
+    <div class="notice"><b>ВАЖНО</b><span>Без СТС или ПТС номер не изготавливаем. Это требование закона и защита от тех, кто хочет сделать чужой номер.</span></div>
+  </section>
+
+  <section id="how" class="steps-sec">
+    <div class="wrap sec">
+      <div class="sec-head"><h2 class="h2">Порядок получения номеров</h2></div>
+      <ol class="steps">
+        <li><b class="num">1</b><span class="time">1 минута</span><h3>Заявка</h3><p>На сайте, по телефону или в мессенджере. Можно сразу прислать фото СТС.</p></li>
+        <li><b class="num">2</b><span class="time">2-3 минуты</span><h3>Сверка документов</h3><p>Проверяем, что номер закреплён за вашей машиной, и называем цену.</p></li>
+        <li><b class="num">3</b><span class="time">5 минут</span><h3>Изготовление</h3><p>Делаем табличку при вас на сертифицированном оборудовании.</p></li>
+        <li><b class="num">4</b><span class="time">сразу</span><h3>Получение</h3><p>Забираете в точке или получаете курьером. Оплата при получении.</p></li>
+      </ol>
+      <div class="row-btns">
+        <button class="btn btn-y" type="button" data-open="order" style="min-height:56px;padding:0 26px">Оставить заявку</button>
+        <button class="btn btn-o" type="button" data-open="msg" style="min-height:56px;--ring:#FFFFFF"><span class="stack3"><img src="img/whatsapp.svg" alt=""><img src="img/telegram.svg" alt=""><img src="img/max.svg" alt=""></span>Написать</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap sec">
+    <div class="faq">
+      <div class="faq-side">
+        <h2 class="h2">Частые вопросы</h2>
+        <p>Не нашли ответ? Напишите в мессенджер, ответим за пару минут.</p>
+      </div>
+      <div class="qa">
+        <details open><summary>Это законно?<i aria-hidden="true"></i></summary><p>Да. Дубликаты изготавливают компании из реестра изготовителей МВД, мы в нём есть. Дубликат повторяет ваш зарегистрированный номер, поэтому ехать в ГИБДД не нужно.</p></details>
+        <details><summary>Нужно ли сдавать старые номера?<i aria-hidden="true"></i></summary><p>Нет, старые таблички остаются у вас. Если они повреждены, лучше их утилизировать, чтобы никто ими не воспользовался.</p></details>
+        <details><summary>Номер украли. Можно просто сделать дубликат?<i aria-hidden="true"></i></summary><p>Сделать можно, ездить будете законно. Но украденную табличку могут повесить на другую машину. Поэтому при краже советуем заявить в полицию: если номер объявят в розыск, его меняют уже через ГИБДД.</p></details>
+        <details><summary>Можно без СТС?<i aria-hidden="true"></i></summary><p>Нет. Нужен СТС или ПТС (бумажный или выписка из ЭПТС): по нему мы сверяем, что номер закреплён за машиной.</p></details>
+        <details><summary>Можно заказать по фото документов?<i aria-hidden="true"></i></summary><p>Да. Пришлите фото СТС в мессенджер или прикрепите к заявке. Оригинал покажете при получении, в том числе курьеру.</p></details>
+        <details><summary>Есть доставка?<i aria-hidden="true"></i></summary><p>Да. Курьер по Казани и Набережным Челнам в день заказа, по России отправляем СДЭК после предоплаты.</p></details>
+        <details><summary>Сколько служит дубликат?<i aria-hidden="true"></i></summary><p>Столько же, сколько заводской номер: та же алюминиевая основа, светоотражающая плёнка и тиснёные символы. Гарантия [N] лет.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="dark">
+    <div class="wrap sec">
+      <div class="sec-head"><span class="eb" style="color:var(--accent)">Контакты</span><h2 class="h2">Приезжайте, номер будет готов <span class="y">за 5 минут</span></h2><div class="deliv"><p>Нет времени заехать? Привезём номер курьером в день заказа по Казани и Набережным Челнам, по России отправим СДЭК.</p><button class="btn btn-y" type="button" data-open="order" data-delivery="1">Заказать доставку</button></div></div>
+      <div class="branches" id="branches"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="dark ftr">
+  <div class="wrap">
+    <div class="ftr-top">
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1 1 240px">
+        <span style="font-family:var(--f-logo);font-weight:700;font-size:22px;color:#FFFFFF">ГОСНОМЕР16</span>
+        <span style="font-size:14px;max-width:32ch">Дубликаты госномеров в Казани и Набережных Челнах. В реестре изготовителей МВД, № [номер].</span>
+      </div>
+      <nav aria-label="Разделы сайта" style="display:flex;flex-direction:column;gap:8px;font-size:15px"><a href="#prices">Виды номеров и цены</a><a href="#docs">Документы</a><a href="#how">Порядок получения</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a></nav>
+      <div style="display:flex;flex-direction:column;gap:6px;font-size:15px"><span style="font-size:12px;color:#7E848A">КАЗАНЬ</span><a href="tel:+79534021053" data-goal="call_kzn" style="color:#FFFFFF;font-weight:600">+7 (953) 402-10-53</a><span style="font-size:12px;color:#7E848A;margin-top:8px">НАБ. ЧЕЛНЫ</span><a href="tel:+79874140815" data-goal="call_nch" style="color:#FFFFFF;font-weight:600">+7 (987) 414-08-15</a></div>
+      <div class="msgs"><button type="button" data-open="msg" data-messenger="wa" aria-label="WhatsApp"><img src="img/whatsapp.svg" alt=""></button><button type="button" data-open="msg" data-messenger="tg" aria-label="Telegram"><img src="img/telegram.svg" alt=""></button><button type="button" data-open="msg" data-messenger="max" aria-label="MAX"><img src="img/max.svg" alt=""></button></div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2026 ГОСНОМЕР16 · ИП [Фамилия И. О.] · ИНН [000000000000] · ОГРНИП [000000000000000]</span>
+      <span style="display:flex;gap:20px;flex-wrap:wrap"><a href="#privacy">Политика конфиденциальности</a><a href="#consent">Согласие на обработку данных</a></span>
+    </div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Быстрые действия">
+  <button class="btn btn-o" type="button" data-open="call"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Позвонить</button>
+  <button class="btn btn-o" type="button" data-open="msg" style="--ring:#FFFFFF"><span class="stack3"><img src="img/max.svg" alt=""><img src="img/telegram.svg" alt=""><img src="img/whatsapp.svg" alt=""></span>Написать</button>
+</nav>
+
+<dialog class="dlg" id="dlg"><div class="dlg-in" id="dlg-body"></div></dialog>
+
+<script>
+(function () {
+  // ===== Данные. Меняйте здесь =====
+  var YM_ID = 0; // номер счётчика Яндекс Метрики
+  var CITIES = {
+    kzn: { name: 'Казань', addr: 'ул. Техническая, д. 120Дк1', hours: 'Пн-сб с 9:00 до 18:00, без перерыва<br>Вс выходной', phone: '+7 (953) 402-10-53', tel: '+79534021053',
+      wa: 'https://wa.me/79534021053', tg: 'https://t.me/+79534021053', max: '#max-kazan', photo: '',
+      route: 'https://yandex.ru/maps/?rtext=~' + encodeURIComponent('Казань, Техническая улица, 120Дк1') + '&rtt=auto',
+      reviews: { yandex: ['#yandex-kazan', '[4,9]', '[000]'], gis: ['#2gis-kazan', '[4,9]', '[000]'], avito: ['#avito-kazan', '[4,9]', '[000]'] } },
+    nch: { name: 'Набережные Челны', addr: 'ул. Машиностроительная, д. 22, стр. 5', hours: 'Пн, ср, чт, пт, сб с 8:00 до 18:00<br>Вт с 8:00 до 20:00<br>Вс с 10:00 до 14:00<br>Без перерыва', phone: '+7 (987) 414-08-15', tel: '+79874140815',
+      wa: 'https://wa.me/79874140815', tg: 'https://t.me/+79874140815', max: '#max-chelny', photo: '',
+      route: 'https://yandex.ru/maps/?rtext=~' + encodeURIComponent('Набережные Челны, Машиностроительная улица, 22с5') + '&rtt=auto',
+      reviews: { yandex: ['#yandex-chelny', '[4,9]', '[000]'], gis: ['#2gis-chelny', '[4,9]', '[000]'], avito: ['#avito-chelny', '[4,9]', '[000]'] } }
+  };
+  var DELIVERY_CITY = 'kzn'; // какой филиал отвечает в мессенджерах клиентам из других городов (доставка)
+  var MSG = { max: ['MAX', 'img/max.svg'], tg: ['Telegram', 'img/telegram.svg'], wa: ['WhatsApp', 'img/whatsapp.svg'] };
+  var PLATFORMS = { yandex: ['Яндекс Карты', 'img/yandex-maps.svg'], gis: ['2ГИС', 'img/2gis.svg'], avito: ['Авито', 'img/avito.svg'] };
+  var TYPES = [
+    { id: 't1', name: 'Стандартный', type: 'Тип 1', desc: 'Для легковых и грузовых автомобилей. Самый частый заказ, делаем при вас за 5 минут.', p1: 1000, p2: 1500, lay: 'line', l1: 'А', d: '777', l2: 'АА', reg: '116' },
+    { id: 't1a', name: 'Квадратный', type: 'Тип 1А', desc: 'Для авто с нестандартным местом крепления: японские, американские, ретро и другие.', p1: 1300, p2: 1800, lay: 'sq', l1: 'Е', d: '345', l2: 'КХ', reg: '716' },
+    { id: 't1j', name: 'Японский формат', type: 'Тип 1А', desc: 'Увеличенная квадратная табличка 330 × 165 мм под штатную нишу японских авто.', p1: 1500, p2: 2500, lay: 'sq', l1: 'В', d: '123', l2: 'ОР', reg: '16' },
+    { id: 't1b', name: 'Такси и автобусы', type: 'Тип 1Б', desc: 'Жёлтый фон для транспорта, который перевозит пассажиров.', p1: 1200, p2: 1700, lay: 'line', color: 'yellow', l1: 'ВС', d: '123', l2: '', reg: '16' },
+    { id: 't4', name: 'Мотоциклетный', type: 'Тип 4', desc: 'Уменьшенный номер нового образца для мотоциклов.', p1: 1000, lay: 'mo', l1: '', d: '5678', l2: 'МН', reg: '116' },
+    { id: 't4b', name: 'Скутер и мопед', type: 'Тип 4Б', desc: 'Малый формат для мопедов и скутеров.', p1: 1000, lay: 'mo', l1: '', d: '1234', l2: 'ВК', reg: '16' },
+    { id: 't4a', name: 'Квадроцикл', type: 'Тип 4А', desc: 'Для квадроциклов, снегоходов и внедорожной мототехники.', p1: 1300, lay: 'mo', l1: '', d: '4321', l2: 'АТ', reg: '716' },
+    { id: 't3', name: 'Спецтехника', type: 'Тип 3', desc: 'Для тракторов и самоходных машин, зарегистрированных в Гостехнадзоре.', p1: 1500, lay: 'sq', l1: '', d: '7777', l2: 'ТХ', reg: '16' },
+    { id: 't2', name: 'Прицепной', type: 'Тип 2', desc: 'Одна табличка на заднюю часть прицепа или полуприцепа.', p1: 900, lay: 'line', l1: 'АА', d: '7777', l2: '', reg: '16' },
+    { id: 't15', name: 'Транзитный', type: 'Тип 15', desc: 'Для перегона машины до постановки на учёт.', p1: 1500, p2: 2500, lay: 'line', color: 'yellow', l1: 'АА', d: '777', l2: 'А', reg: '16' },
+    { id: 'ussr', name: 'Советский', type: 'ГОСТ 3207-77', desc: 'Для ретро-автомобилей с номерами старого образца. Под заказ за 1-2 дня.', p2: 2500, lay: 'line', color: 'black', noreg: true, l1: 'а', d: '7777', l2: 'МО', reg: '' }
+  ];
+  var SLIDES = [['r', 'yandex'], ['p', 'Казань'], ['r', 'gis'], ['p', 'Набережные Челны'], ['r', 'avito'], ['p', 'Казань'], ['r', 'yandex'], ['p', 'Набережные Челны']];
+
+  // ===== Утилиты =====
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var rub = function (n) { return n.toLocaleString('ru-RU') + ' ₽'; };
+  function goal(name) { try { if (YM_ID && window.ym) window.ym(YM_ID, 'reachGoal', name); } catch (e) {} }
+  var PIN = '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+  var ARROW = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
+  var CLOSE = '<button class="x" type="button" data-close aria-label="Закрыть"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#596067" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
+
+  function plate(t) {
+    var cls = ['pl-in', t.lay, t.color || '', t.noreg ? 'noreg' : ''].join(' ');
+    var rc = 'r' + (t.reg.length === 2 ? ' r2' : '');
+    var reg = t.noreg ? '' : '<div class="pl-reg"><span class="' + rc + '">' + t.reg + '</span><span class="pl-rus">RUS<i class="flag"></i></span></div>';
+    if (t.lay === 'line') return '<div class="pl"><div class="' + cls + '"><div class="pl-main"><span class="pl-chars"><span class="l">' + t.l1 + '</span><span class="d">' + t.d + '</span><span class="l">' + t.l2 + '</span></span></div>' + reg + '</div></div>';
+    return '<div class="pl"><div class="' + cls + '"><div class="pl-top"><span class="pl-chars"><span class="l">' + t.l1 + '</span><span class="d">' + t.d + '</span></span></div><div class="pl-bot"><span class="pl-chars"><span class="l">' + t.l2 + '</span></span></div>' + reg + '</div></div>';
+  }
+
+  // ===== Рендер секций =====
+  var W = { line: '88%', sq: '50%', mo: '40%' };
+  $('#products').innerHTML = TYPES.map(function (t) {
+    var price = t.p1 ? 'от ' + rub(t.p1) + '/шт' : rub(t.p2);
+    var note = t.p1 && t.p2 ? 'комплект ' + rub(t.p2) : (t.p1 ? 'за 1 шт' : 'за комплект');
+    return '<article class="pcard"><div class="pphoto"><div class="pw" style="width:' + W[t.lay] + '">' + plate(t) + '</div><h3>' + t.name + '</h3></div>' +
+      '<div class="pbody"><div class="tags"><span>Дубликат</span><span>' + t.type + '</span></div><p>' + t.desc + '</p></div>' +
+      '<div class="pfoot"><span><b>' + price + '</b><small>' + note + '</small></span><button class="btn btn-y" type="button" data-open="pick" data-type="' + t.id + '">Заказать</button></div></article>';
+  }).join('') +
+    '<button class="other" type="button" data-open="msg"><span class="top"><span class="plus"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F2C200" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><b>Нужен другой<br>тип номера?</b></span>' +
+    '<span class="bot"><span class="eb" style="color:#7A8068">Не нашли нужный вариант?</span><b>Поможем разобраться</b><span>Пришлите фото старого номера или опишите технику. Подскажем, можно ли сделать и сколько стоит.</span><span class="row"><b style="font-size:16px">Индивидуальный запрос</b><span class="go">' + ARROW + '</span></span></span></button>';
+
+  $('#track').innerHTML = SLIDES.map(function (s) {
+    if (s[0] === 'p') return '<div class="slide ph" role="img" aria-label="Фото клиента с номерами">Тут фото с номерами<span class="city">' + s[1] + '</span></div>';
+    var p = PLATFORMS[s[1]];
+    return '<div class="slide rv" role="img" aria-label="Скрин отзыва">Тут скрин отзыва<span class="tag"><img src="' + p[1] + '" alt="">' + p[0] + '</span></div>';
+  }).join('');
+
+  $('#branches').innerHTML = ['kzn', 'nch'].map(function (k) {
+    var c = CITIES[k];
+    return '<article class="branch">' + (c.photo ? '<div class="ph"><img src="' + c.photo + '" alt="Филиал ГОСНОМЕР16, ' + c.name + '"><span class="c">' + c.name + '</span></div>' : '<div class="ph" role="img" aria-label="Место для фото филиала ' + c.name + '"><span class="c">' + c.name + '</span>ФОТО ФИЛИАЛА: вход, вывеска ГОСНОМЕР16, парковка</div>') +
+      '<div class="body"><span><b>' + c.addr + '</b><small class="hrs">' + c.hours + '</small></span>' +
+      '<a class="tel" href="tel:' + c.tel + '" data-goal="call_' + k + '">' + c.phone + '</a>' +
+      '<div class="acts"><a href="' + c.wa + '" target="_blank" rel="noopener" data-goal="wa_' + k + '" aria-label="WhatsApp ' + c.name + '"><img src="img/whatsapp.svg" alt=""></a>' +
+      '<a href="' + c.tg + '" target="_blank" rel="noopener" data-goal="tg_' + k + '" aria-label="Telegram ' + c.name + '"><img src="img/telegram.svg" alt=""></a>' +
+      '<a href="' + c.max + '" target="_blank" rel="noopener" data-goal="max_' + k + '" aria-label="MAX ' + c.name + '"><img src="img/max.svg" alt=""></a>' +
+      '<a class="btn btn-od" href="' + c.route + '" target="_blank" rel="noopener">Построить маршрут<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F2F3EF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></article>';
+  }).join('');
+
+  document.querySelectorAll('[data-slide]').forEach(function (b) {
+    b.addEventListener('click', function () { $('#track').scrollBy({ left: Number(b.dataset.slide) * 286, behavior: 'smooth' }); });
+  });
+
+  // ===== Диалоги =====
+  var dlg = $('#dlg'), body = $('#dlg-body');
+  var state = { city: 'kzn', messenger: null, type: null, delivery: false, agree: false, phone: '', sent: false };
+  var SEG = { kzn: 'Казань', nch: 'Наб. Челны', other: 'Другой город' };
+  function seg(withOther) {
+    return '<div class="seg" role="group" aria-label="Город">' + (withOther ? ['kzn', 'nch', 'other'] : ['kzn', 'nch']).map(function (k) {
+      return '<button type="button" data-city="' + k + '" aria-pressed="' + (state.city === k) + '">' + SEG[k] + '</button>';
+    }).join('') + '</div>';
+  }
+  function head(title, sub) { return '<div class="dlg-head"><span><b>' + title + '</b>' + (sub ? '<span>' + sub + '</span>' : '') + '</span>' + CLOSE + '</div>'; }
+  var views = {
+    msg: function () {
+      if (state.messenger) {
+        var m = MSG[state.messenger], d = CITIES[DELIVERY_CITY];
+        return head('Написать в ' + m[0], 'В какой город пишете?') + ['kzn', 'nch'].map(function (k) {
+          var cc = CITIES[k];
+          return '<a class="opt" href="' + cc[state.messenger] + '" target="_blank" rel="noopener" data-goal="' + state.messenger + '_' + k + '"><img src="' + m[1] + '" alt=""><span><b>' + cc.name + '</b><small>' + cc.addr + '</small></span><span class="end">' + ARROW + '</span></a>';
+        }).join('') +
+          '<a class="opt" href="' + d[state.messenger] + '" target="_blank" rel="noopener" data-goal="' + state.messenger + '_other"><img src="' + m[1] + '" alt=""><span><b>Другой город</b><small>Нужна доставка? Пишите сюда</small></span><span class="end">' + ARROW + '</span></a>';
+      }
+      var other = state.city === 'other', c = CITIES[other ? DELIVERY_CITY : state.city];
+      return head('Написать нам', 'Ответим за пару минут в рабочее время') + seg(true) + Object.keys(MSG).map(function (k) {
+        return '<a class="opt" href="' + c[k] + '" target="_blank" rel="noopener" data-goal="' + k + '_' + state.city + '"><img src="' + MSG[k][1] + '" alt=""><span><b>' + MSG[k][0] + '</b><small>' + (other ? 'Доставка в другой город' : c.name) + '</small></span><span class="end">' + ARROW + '</span></a>';
+      }).join('');
+    },
+    reviews: function () {
+      var c = CITIES[state.city];
+      return head('Почитать отзывы', 'Выберите город и площадку, откроется в новой вкладке') + seg() + Object.keys(PLATFORMS).map(function (k) {
+        var r = c.reviews[k];
+        return '<a class="opt" href="' + r[0] + '" target="_blank" rel="noopener"><img src="' + PLATFORMS[k][1] + '" alt=""><span><b>' + PLATFORMS[k][0] + '</b><small>' + r[2] + ' отзывов</small></span><span class="end">★ ' + r[1] + '</span></a>';
+      }).join('');
+    },
+    call: function () {
+      return head('Позвонить', 'Выберите точку') + ['kzn', 'nch'].map(function (k) {
+        var c = CITIES[k];
+        return '<a class="opt" href="tel:' + c.tel + '" data-goal="call_' + k + '"><span><b>' + c.name + '</b><small>' + c.addr + '</small></span><span class="end" style="font-size:19px">' + c.phone + '</span></a>';
+      }).join('');
+    },
+    order: function () {
+      if (state.sent) {
+        return head('Заявка принята') + '<div class="ok"><b>Спасибо!</b><span>Перезвоним на ' + esc(state.phone) + ' в течение 5 минут в рабочее время.</span></div><button class="btn btn-k" type="button" data-close>Хорошо</button>';
+      }
+      return head('Оставить заявку', 'Перезвоним за 5 минут в рабочее время и ответим на все вопросы') +
+        '<div class="field"><label for="f-phone">Телефон</label><input class="inp" id="f-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" value="' + esc(state.phone) + '"><span class="err" id="f-err" hidden></span></div>' +
+        '<button class="btn btn-y" type="button" id="f-send" style="min-height:54px">Перезвоните мне</button>' +
+        '<label class="chk sm"><input type="checkbox" id="f-agree"' + (state.agree ? ' checked' : '') + '><span>Я согласен с <a href="#privacy">политикой обработки персональных данных</a></span></label><span class="err" id="f-agree-err" hidden>Отметьте согласие, чтобы отправить заявку</span>';
+    },
+    branch: function () {
+      var k = state.branch, c = CITIES[k];
+      var ph = c.photo ? '<div class="dlg-photo"><img src="' + c.photo + '" alt="Филиал ГОСНОМЕР16, ' + c.name + '"></div>' : '<div class="dlg-photo" role="img" aria-label="Место для фото филиала">ФОТО ФИЛИАЛА</div>';
+      return head(c.name) + ph +
+        '<div class="br-info"><b>' + c.addr + '</b><span class="hrs">' + c.hours + '</span><a href="tel:' + c.tel + '" data-goal="call_' + k + '">' + c.phone + '</a></div>' +
+        '<div class="br-msg">' + ['max', 'tg', 'wa'].map(function (m) {
+          return '<a href="' + c[m] + '" target="_blank" rel="noopener" data-goal="' + m + '_' + k + '" aria-label="' + MSG[m][0] + ' ' + c.name + '"><img src="' + MSG[m][1] + '" alt=""></a>';
+        }).join('') + '<span>Пишите, мы на связи</span></div>' +
+        '<a class="btn btn-y" href="' + c.route + '" target="_blank" rel="noopener" data-goal="route_' + k + '" style="min-height:54px">Маршрут в Яндекс Картах' + ARROW + '</a>';
+    },
+    addrs: function () {
+      return head('Наши филиалы', 'Выберите филиал: фото, график работы и маршрут') + ['kzn', 'nch'].map(function (k) {
+        var c = CITIES[k];
+        return '<button class="opt" type="button" data-open="branch" data-branch="' + k + '"><span class="opt-pin">' + PIN + '</span><span><b>' + c.name + '</b><small>' + c.addr + '</small></span><span class="end">' + ARROW + '</span></button>';
+      }).join('');
+    },
+    pick: function () {
+      var t = TYPES.find(function (x) { return x.id === state.type; }) || TYPES[0];
+      var k = state.city === 'other' ? DELIVERY_CITY : state.city, c = CITIES[k];
+      var txt = encodeURIComponent('Здравствуйте! Хочу заказать дубликат номера: ' + t.name + ' (' + t.type + ')');
+      var items = [['max', c.max, 'MAX', 'img/max.svg'], ['tg', c.tg, 'Telegram', 'img/telegram.svg'], ['wa', c.wa + '?text=' + txt, 'WhatsApp', 'img/whatsapp.svg']];
+      return head('Для заказа', 'Выберите город и удобный способ связи') + seg(true) +
+        '<div class="pick">' + items.map(function (i) {
+          return '<a href="' + i[1] + '" target="_blank" rel="noopener" data-goal="order_' + i[0] + '_' + k + '"><img src="' + i[3] + '" alt=""><span>' + i[2] + '</span></a>';
+        }).join('') +
+        '<a href="tel:' + c.tel + '" data-goal="order_call_' + k + '"><span class="pick-call"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span>Звонок</span></a></div>' +
+        '<button class="link-btn" type="button" data-open="order" data-type="' + t.id + '">Или оставьте номер, перезвоним сами</button>';
+    },
+    doc: function () { return head('Свидетельство об утверждении образца') + '<div class="sheet big-doc">СЮДА СКАН СВИДЕТЕЛЬСТВА</div>'; },
+    menu: function () {
+      return head('Меню') + '<nav class="menu-nav" aria-label="Разделы"><a href="#prices" data-close>Виды номеров и цены</a><a href="#trust" data-close>Почему нам доверяют</a><a href="#docs" data-close>Документы</a><a href="#faq" data-close>Вопросы</a><a href="#contacts" data-close>Контакты</a></nav>' +
+        ['kzn', 'nch'].map(function (k) { var c = CITIES[k]; return '<a class="opt" href="tel:' + c.tel + '" data-goal="call_' + k + '"><span><b>' + c.name + '</b><small>' + c.addr + '</small></span><span class="end" style="font-size:17px">' + c.phone + '</span></a>'; }).join('');
+    }
+  };
+  var current = null;
+  function render() { body.innerHTML = views[current](); }
+  function open(view, opts) {
+    current = view;
+    state.messenger = (opts && opts.messenger) || null;
+    if (opts && opts.branch) state.branch = opts.branch;
+    if (view !== 'msg' && view !== 'pick' && state.city === 'other') state.city = 'kzn';
+    if (view === 'pick') state.type = (opts && opts.type) || state.type;
+    if (view === 'order') { state.sent = false; state.type = (opts && opts.type) || null; state.delivery = !!(opts && opts.delivery); }
+    render();
+    if (!dlg.open) { try { dlg.showModal(); } catch (e) { dlg.setAttribute('open', ''); } }
+    var f = body.querySelector('#f-phone, .opt, .seg button, .x'); if (f) f.focus();
+  }
+  function close() { if (dlg.open) dlg.close(); }
+
+  document.addEventListener('click', function (e) {
+    var g = e.target.closest('[data-goal]'); if (g) goal(g.dataset.goal);
+    var o = e.target.closest('[data-open]');
+    if (o) { e.preventDefault(); open(o.dataset.open, { messenger: o.dataset.messenger, type: o.dataset.type, delivery: o.dataset.delivery, branch: o.dataset.branch }); }
+  });
+  dlg.addEventListener('click', function (e) {
+    if (e.target === dlg) return close();
+    if (e.target.closest('[data-close]')) { var a = e.target.closest('a[href^="#"]'); close(); if (a) { var t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView(); } return; }
+    var c = e.target.closest('[data-city]'); if (c) { state.city = c.dataset.city; render(); return; }
+    var q = e.target.closest('[data-qty]'); if (q) { state.qty = Number(q.dataset.qty); render(); return; }
+    if (e.target.closest('#f-send')) {
+      var digits = state.phone.replace(/\D/g, '');
+      if (digits.length !== 11) { var er = $('#f-err'); er.textContent = 'Введите номер полностью: +7 и 10 цифр'; er.hidden = false; $('#f-phone').focus(); return; }
+      if (!state.agree) { $('#f-agree-err').hidden = false; $('#f-agree').focus(); return; }
+      var tp = TYPES.find(function (x) { return x.id === state.type; });
+      var order = { delivery: state.delivery, type: tp ? tp.name + ' (' + tp.type + ')' : null, phone: state.phone, page: location.href };
+      // Подключите отправку заявки: fetch('/api/order', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(order) })
+      // или отправку в Telegram-бот или CRM. Пока заявка выводится в консоль.
+      console.log('order', order);
+      goal('order_submit');
+      state.sent = true; render();
+    }
+  });
+  dlg.addEventListener('change', function (e) { if (e.target.id === 'f-agree') { state.agree = e.target.checked; if (state.agree) $('#f-agree-err').hidden = true; } });
+  dlg.addEventListener('input', function (e) {
+    if (e.target.id !== 'f-phone') return;
+    var d = e.target.value.replace(/\D/g, '');
+    if (d[0] === '8') d = '7' + d.slice(1);
+    if (d && d[0] !== '7') d = '7' + d;
+    d = d.slice(0, 11);
+    var a = d.slice(1, 4), b = d.slice(4, 7), c = d.slice(7, 9), f = d.slice(9, 11);
+    state.phone = !d ? '' : '+7' + (a ? ' (' + a : '') + (a.length === 3 ? ')' : '') + (b ? ' ' + b : '') + (c ? '-' + c : '') + (f ? '-' + f : '');
+    e.target.value = state.phone;
+    var er = $('#f-err'); if (er) er.hidden = true;
+  });
+})();
+</script>
+
 </body>
 </html>

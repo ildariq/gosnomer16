@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svg width="100%" height="100%" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <path d="M1000,500C1000,775.958 775.958,1000 500,1000C224.042,1000 0,775.958 0,500C0,224.042 224.042,0 500,0C775.958,0 1000,224.042 1000,500Z" style="fill:url(#_Linear1);"/>
+    <path d="M1000,500C1000,775.958 775.958,1000 500,1000C224.042,1000 0,775.958 0,500C0,224.042 224.042,0 500,0C775.958,0 1000,224.042 1000,500Z" style="fill:url(#_Radial2);"/>
+    <g transform="matrix(0.891341,0,0,0.891341,54.329276,54.32946)">
+        <path d="M508.211,878.328C433.204,878.328 398.347,867.378 337.758,823.578C299.433,872.853 178.072,911.361 172.779,845.478C172.779,796.022 161.829,754.23 149.419,708.605C134.637,652.395 117.847,589.798 117.847,499.097C117.847,282.471 295.601,119.5 506.204,119.5C716.989,119.5 882.151,290.501 882.151,501.104C882.858,708.45 715.556,877.222 508.211,878.328M511.314,306.743C408.75,301.451 328.815,372.443 311.113,483.767C296.513,575.929 322.428,688.165 344.51,694.005C355.095,696.56 381.74,675.025 398.347,658.418C425.806,677.387 457.789,688.783 491.057,691.45C597.33,696.562 688.137,615.656 695.272,509.5C699.426,403.118 617.602,313.014 511.314,306.926L511.314,306.743Z" style="fill:white;"/>
+    </g>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(882.153,-260.536,260.536,882.153,117.847,760.536)"><stop offset="0" style="stop-color:rgb(68,204,255);stop-opacity:1"/><stop offset="0.66" style="stop-color:rgb(85,51,238);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(153,51,221);stop-opacity:1"/></linearGradient>
+        <radialGradient id="_Radial2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(757.816686,947.806826,-390.520568,312.239789,-23.790816,-439.18541)"><stop offset="0" style="stop-color:rgb(0,0,255);stop-opacity:1"/><stop offset="1" style="stop-color:black;stop-opacity:0"/><stop offset="1" style="stop-color:black;stop-opacity:0"/></radialGradient>
+    </defs>
+</svg>
