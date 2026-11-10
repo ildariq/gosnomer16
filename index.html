@@ -226,6 +226,8 @@ button{font:inherit;color:inherit}
 .mo .l{font-size:27cqw}.mo .d{font-size:35cqw}
 .mo .pl-reg{padding:0 0 3.6cqw}.mo .r{font-size:16cqw;margin-top:.5cqw}.mo .r2{font-size:21cqw}
 .mo .pl-rus{gap:1.8cqw;font-size:7.6cqw}.mo .flag{width:11cqw;height:6.6cqw}
+.pl-in.bold .l,.pl-in.bold .d,.pl-in.bold .r{-webkit-text-stroke:.055em currentColor}
+.pw.combo{width:calc(100% + 24px);margin:0 -12px;display:flex;align-items:center;justify-content:center;gap:3%}
 
 /* docs, steps, faq */
 .sec{padding-block:88px;display:flex;flex-direction:column;gap:36px}
@@ -353,7 +355,11 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
 .chk input{width:22px;height:22px;margin:0;accent-color:var(--ink);flex:none}
 .chk.sm{align-items:flex-start;gap:10px;min-height:0;font-size:13px;line-height:1.45;color:var(--muted)}
 .chk.sm input{width:18px;height:18px;margin-top:1px}
-.big-doc{width:min(78vw, 460px);aspect-ratio:210/297;display:grid;place-items:center;margin:0 auto;font:500 12px/1.5 var(--f-mono);color:var(--warn)}
+.doc-thumb .sheet{padding:0!important;overflow:hidden}
+.doc-thumb .sheet img{width:100%;height:100%;object-fit:cover}
+.dlg.wide{width:min(680px, calc(100vw - 32px))}
+.cert{display:block;width:auto;max-width:100%;max-height:calc(100dvh - 150px);margin:0 auto;border-radius:8px;border:1px solid var(--line)}
+@media (max-width:640px){.dlg.wide{width:100%}.cert{max-height:calc(88dvh - 120px)}}
 .menu-nav{display:flex;flex-direction:column}
 .menu-nav a{padding:13px 0;border-bottom:1px solid #E3E5E0;text-decoration:none;font-size:18px;font-weight:500}
 @media (max-width:640px){
@@ -370,7 +376,7 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
   <div class="wrap hdr-in">
     <div class="brand"><a class="logo" href="#top">ГОСНОМЕР16</a><button class="mcity" type="button" data-open="addrs"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Наши адреса</span></button></div>
     <div class="mcities"><button class="city" type="button" data-open="branch" data-branch="kzn"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Казань</span></button><button class="city" type="button" data-open="branch" data-branch="nch"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><i class="full">Набережные Челны</i><i class="short">Наб.Челны</i></span></button></div>
-    <div class="addr"><span class="addr-t"><button class="city" type="button" data-open="branch" data-branch="kzn"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Казань</span></button><a href="tel:+79534021053" data-goal="call_kzn">+7 (953) 402-10-53</a><button class="street" type="button" data-open="branch" data-branch="kzn"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>ул. Техническая, д. 120Дк1</span></button></span></div>
+    <div class="addr"><span class="addr-t"><button class="city" type="button" data-open="branch" data-branch="kzn"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Казань</span></button><a href="tel:+79874140815" data-goal="call_kzn">+7 (987) 414-08-15</a><button class="street" type="button" data-open="branch" data-branch="kzn"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>ул. Техническая, д. 120Дк1</span></button></span></div>
     <div class="addr a2"><span class="addr-t"><button class="city" type="button" data-open="branch" data-branch="nch"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Набережные Челны</span></button><a href="tel:+79874140815" data-goal="call_nch">+7 (987) 414-08-15</a><button class="street" type="button" data-open="branch" data-branch="nch"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>ул. Машиностроительная, д. 22, стр. 5</span></button></span></div>
     <div class="hdr-right">
       <div class="msgs">
@@ -400,7 +406,7 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
         </ul>
         <button class="rate" type="button" data-open="reviews">
           <span class="lg3"><img src="img/yandex-maps.svg" alt=""><img src="img/2gis.svg" alt=""><img src="img/avito.svg" alt=""></span>
-          <span style="display:flex;flex-direction:column;line-height:1.2"><span style="display:flex;align-items:baseline;gap:8px"><b>[4,9]</b><span class="stars">★★★★★</span></span><span style="font-size:13px;color:#C9CCCF">150+ отзывов на 3 площадках</span></span>
+          <span style="display:flex;flex-direction:column;line-height:1.2"><span style="display:flex;align-items:baseline;gap:8px"><b>5,0</b><span class="stars">★★★★★</span></span><span style="font-size:13px;color:#C9CCCF">500+ отзывов на 3 площадках</span></span>
           <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9CCCF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
         </button>
         <div class="cta">
@@ -425,10 +431,10 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
       </div>
       <div class="reg">
         <button class="doc-thumb" type="button" data-open="doc" aria-label="Увеличить свидетельство">
-          <span class="sheet"><b>Свидетельство</b><span class="lines"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="sheet"><img src="img/certificate-thumb.webp" alt="" width="84" height="119"></span>
           <span class="zoom"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8v6M8 11h6"/></svg></span>
         </button>
-        <span style="display:flex;flex-direction:column;min-width:0"><span class="k">Реестр изготовителей МВД</span><b style="font-weight:600">Запись № [номер] от [дата]</b><a class="btn btn-k" href="#registry" target="_blank" rel="noopener">Проверить в реестре<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></span>
+        <span style="display:flex;flex-direction:column;min-width:0"><span class="k">Реестр изготовителей МВД</span><b style="font-weight:600">Свидетельство АА № 013209 от 01.12.2025</b><a class="btn btn-k" href="#registry" target="_blank" rel="noopener">Проверить в реестре<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></span>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
@@ -508,14 +514,14 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
     <div class="ftr-top">
       <div style="display:flex;flex-direction:column;gap:10px;flex:1 1 240px">
         <span style="font-family:var(--f-logo);font-weight:700;font-size:22px;color:#FFFFFF">ГОСНОМЕР16</span>
-        <span style="font-size:14px;max-width:32ch">Дубликаты госномеров в Казани и Набережных Челнах. В реестре изготовителей МВД, № [номер].</span>
+        <span style="font-size:14px;max-width:32ch">Дубликаты госномеров в Казани и Набережных Челнах. Свидетельство МВД АА № 013209 от 01.12.2025.</span>
       </div>
       <nav aria-label="Разделы сайта" style="display:flex;flex-direction:column;gap:8px;font-size:15px"><a href="#prices">Виды номеров и цены</a><a href="#docs">Документы</a><a href="#how">Порядок получения</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a></nav>
-      <div style="display:flex;flex-direction:column;gap:6px;font-size:15px"><span style="font-size:12px;color:#7E848A">КАЗАНЬ</span><a href="tel:+79534021053" data-goal="call_kzn" style="color:#FFFFFF;font-weight:600">+7 (953) 402-10-53</a><span style="font-size:12px;color:#7E848A;margin-top:8px">НАБ. ЧЕЛНЫ</span><a href="tel:+79874140815" data-goal="call_nch" style="color:#FFFFFF;font-weight:600">+7 (987) 414-08-15</a></div>
+      <div style="display:flex;flex-direction:column;gap:6px;font-size:15px"><span style="font-size:12px;color:#7E848A">КАЗАНЬ</span><a href="tel:+79874140815" data-goal="call_kzn" style="color:#FFFFFF;font-weight:600">+7 (987) 414-08-15</a><span style="font-size:12px;color:#7E848A;margin-top:8px">НАБ. ЧЕЛНЫ</span><a href="tel:+79874140815" data-goal="call_nch" style="color:#FFFFFF;font-weight:600">+7 (987) 414-08-15</a></div>
       <div class="msgs"><button type="button" data-open="msg" data-messenger="wa" aria-label="WhatsApp"><img src="img/whatsapp.svg" alt=""></button><button type="button" data-open="msg" data-messenger="tg" aria-label="Telegram"><img src="img/telegram.svg" alt=""></button><button type="button" data-open="msg" data-messenger="max" aria-label="MAX"><img src="img/max.svg" alt=""></button></div>
     </div>
     <div class="ftr-bot">
-      <span>© 2026 ГОСНОМЕР16 · ИП [Фамилия И. О.] · ИНН [000000000000] · ОГРНИП [000000000000000]</span>
+      <span>© 2026 ГОСНОМЕР16 · ИП Сулейманов Р. Р. · ИНН 163902148450 · ОГРНИП 324169000199471</span>
       <span style="display:flex;gap:20px;flex-wrap:wrap"><a href="#privacy">Политика конфиденциальности</a><a href="#consent">Согласие на обработку данных</a></span>
     </div>
   </div>
@@ -532,37 +538,37 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
 (function () {
   // ===== Данные. Меняйте здесь =====
   var YM_ID = 0; // номер счётчика Яндекс Метрики
+  var AVITO = 'https://www.avito.ru/user/c319f3704bac3b7433e767b31da7cc63/profile'; // одна ссылка на Авито для обоих филиалов
   var CITIES = {
-    kzn: { name: 'Казань', addr: 'ул. Техническая, д. 120Дк1', hours: 'Пн-сб с 9:00 до 18:00, без перерыва<br>Вс выходной', phone: '+7 (953) 402-10-53', tel: '+79534021053',
-      wa: 'https://wa.me/79534021053', tg: 'https://t.me/+79534021053', max: '#max-kazan', photo: '',
-      route: 'https://yandex.ru/maps/?rtext=~' + encodeURIComponent('Казань, Техническая улица, 120Дк1') + '&rtt=auto',
-      reviews: { yandex: ['#yandex-kazan', '[4,9]', '[000]'], gis: ['#2gis-kazan', '[4,9]', '[000]'], avito: ['#avito-kazan', '[4,9]', '[000]'] } },
+    kzn: { name: 'Казань', addr: 'ул. Техническая, д. 120Дк1', hours: 'Пн-сб с 9:00 до 18:00, без перерыва<br>Вс выходной', phone: '+7 (987) 414-08-15', tel: '+79874140815',
+      wa: 'https://wa.me/79874140815', tg: 'https://t.me/+79874140815', max: '#max-kazan', photo: '',
+      route: 'https://yandex.ru/maps/?rtext=~55.753243%2C49.131761&rtt=auto',
+      reviews: { yandex: ['https://yandex.ru/maps/org/gosnomer16/157398633406/reviews/', '5,0', 45], gis: ['https://2gis.ru/kazan/firm/70000001106075450/tab/reviews', '5,0', 38], avito: [AVITO, '5,0', 220] } },
     nch: { name: 'Набережные Челны', addr: 'ул. Машиностроительная, д. 22, стр. 5', hours: 'Пн, ср, чт, пт, сб с 8:00 до 18:00<br>Вт с 8:00 до 20:00<br>Вс с 10:00 до 14:00<br>Без перерыва', phone: '+7 (987) 414-08-15', tel: '+79874140815',
       wa: 'https://wa.me/79874140815', tg: 'https://t.me/+79874140815', max: '#max-chelny', photo: '',
-      route: 'https://yandex.ru/maps/?rtext=~' + encodeURIComponent('Набережные Челны, Машиностроительная улица, 22с5') + '&rtt=auto',
-      reviews: { yandex: ['#yandex-chelny', '[4,9]', '[000]'], gis: ['#2gis-chelny', '[4,9]', '[000]'], avito: ['#avito-chelny', '[4,9]', '[000]'] } }
+      route: 'https://yandex.ru/maps/?rtext=~55.725372%2C52.421378&rtt=auto',
+      reviews: { yandex: ['https://yandex.ru/maps/org/gos_nomer16/91595394316/reviews/', '4,9', 24], gis: ['https://2gis.ru/nabchelny/firm/70000001093673769/tab/reviews', '5,0', 194], avito: [AVITO, '5,0', 220] } }
   };
   var DELIVERY_CITY = 'kzn'; // какой филиал отвечает в мессенджерах клиентам из других городов (доставка)
   var MSG = { max: ['MAX', 'img/max.svg'], tg: ['Telegram', 'img/telegram.svg'], wa: ['WhatsApp', 'img/whatsapp.svg'] };
   var PLATFORMS = { yandex: ['Яндекс Карты', 'img/yandex-maps.svg'], gis: ['2ГИС', 'img/2gis.svg'], avito: ['Авито', 'img/avito.svg'] };
   var TYPES = [
-    { id: 't1', name: 'Стандартный', type: 'Тип 1', desc: 'Для легковых и грузовых автомобилей. Самый частый заказ, делаем при вас за 5 минут.', p1: 1000, p2: 1500, lay: 'line', l1: 'А', d: '777', l2: 'АА', reg: '116' },
-    { id: 't1a', name: 'Квадратный', type: 'Тип 1А', desc: 'Для авто с нестандартным местом крепления: японские, американские, ретро и другие.', p1: 1300, p2: 1800, lay: 'sq', l1: 'Е', d: '345', l2: 'КХ', reg: '716' },
-    { id: 't1j', name: 'Японский формат', type: 'Тип 1А', desc: 'Увеличенная квадратная табличка 330 × 165 мм под штатную нишу японских авто.', p1: 1500, p2: 2500, lay: 'sq', l1: 'В', d: '123', l2: 'ОР', reg: '16' },
-    { id: 't1b', name: 'Такси и автобусы', type: 'Тип 1Б', desc: 'Жёлтый фон для транспорта, который перевозит пассажиров.', p1: 1200, p2: 1700, lay: 'line', color: 'yellow', l1: 'ВС', d: '123', l2: '', reg: '16' },
-    { id: 't4', name: 'Мотоциклетный', type: 'Тип 4', desc: 'Уменьшенный номер нового образца для мотоциклов.', p1: 1000, lay: 'mo', l1: '', d: '5678', l2: 'МН', reg: '116' },
-    { id: 't4b', name: 'Скутер и мопед', type: 'Тип 4Б', desc: 'Малый формат для мопедов и скутеров.', p1: 1000, lay: 'mo', l1: '', d: '1234', l2: 'ВК', reg: '16' },
-    { id: 't4a', name: 'Квадроцикл', type: 'Тип 4А', desc: 'Для квадроциклов, снегоходов и внедорожной мототехники.', p1: 1300, lay: 'mo', l1: '', d: '4321', l2: 'АТ', reg: '716' },
-    { id: 't3', name: 'Спецтехника', type: 'Тип 3', desc: 'Для тракторов и самоходных машин, зарегистрированных в Гостехнадзоре.', p1: 1500, lay: 'sq', l1: '', d: '7777', l2: 'ТХ', reg: '16' },
-    { id: 't2', name: 'Прицепной', type: 'Тип 2', desc: 'Одна табличка на заднюю часть прицепа или полуприцепа.', p1: 900, lay: 'line', l1: 'АА', d: '7777', l2: '', reg: '16' },
-    { id: 't15', name: 'Транзитный', type: 'Тип 15', desc: 'Для перегона машины до постановки на учёт.', p1: 1500, p2: 2500, lay: 'line', color: 'yellow', l1: 'АА', d: '777', l2: 'А', reg: '16' },
-    { id: 'ussr', name: 'Советский', type: 'ГОСТ 3207-77', desc: 'Для ретро-автомобилей с номерами старого образца. Под заказ за 1-2 дня.', p2: 2500, lay: 'line', color: 'black', noreg: true, l1: 'а', d: '7777', l2: 'МО', reg: '' }
+    { id: 't1', name: 'Стандартный', type: 'Тип 1', desc: 'Для легковых и грузовых автомобилей. Самый частый заказ, делаем при вас за 5 минут.', p1: 1000, p2: 2000, lay: 'line', l1: 'А', d: '777', l2: 'АА', reg: '116' },
+    { id: 't1a', name: 'Квадратный', type: 'Тип 1А', desc: 'Для авто с нестандартным местом крепления: японские, американские, ретро и другие.', p1: 1500, p2: 3000, lay: 'sq', l1: 'Е', d: '345', l2: 'КХ', reg: '716' },
+    { id: 'bold', name: 'Жирный шрифт', type: 'Тип 1 и 1А', desc: 'Прямой или квадратный номер с более толстыми символами. Смотрится заметнее обычного.', p1: 1300, p2: 2500, p2from: true,
+      plates: [{ lay: 'line', l1: 'М', d: '777', l2: 'ММ', reg: '116', bold: true, w: '61%' }, { lay: 'sq', l1: 'М', d: '777', l2: 'ММ', reg: '116', bold: true, w: '36%' }] },
+    { id: 't1b', name: 'Такси и автобусы', type: 'Тип 1Б', desc: 'Жёлтый фон для транспорта, который перевозит пассажиров.', p1: 1300, p2: 2500, lay: 'line', color: 'yellow', l1: 'ВС', d: '123', l2: '', reg: '16' },
+    { id: 't4', name: 'Мотоциклетный', type: 'Тип 4', desc: 'Уменьшенный номер нового образца для мотоциклов.', p1: 1700, lay: 'mo', l1: '', d: '5678', l2: 'МН', reg: '116' },
+    { id: 't4b', name: 'Скутер и мопед', type: 'Тип 4Б', desc: 'Малый формат для мопедов и скутеров.', p1: 1700, lay: 'mo', l1: '', d: '1234', l2: 'ВК', reg: '16' },
+    { id: 't2', name: 'Прицепной', type: 'Тип 2', desc: 'Одна табличка на заднюю часть прицепа или полуприцепа.', p1: 1000, lay: 'line', l1: 'АА', d: '7777', l2: '', reg: '16' },
+    { id: 'souv', name: 'Сувенирный', tag: 'Сувенир', type: 'Любой текст', desc: 'Номер с вашим текстом или датой: в подарок, для интерьера или фотосессии. Не для установки на автомобиль.', p1: 1300, p2: 2500, p2from: true, lay: 'line', l1: '', d: 'ПАПА', l2: '', reg: '16' }
   ];
   var SLIDES = [['r', 'yandex'], ['p', 'Казань'], ['r', 'gis'], ['p', 'Набережные Челны'], ['r', 'avito'], ['p', 'Казань'], ['r', 'yandex'], ['p', 'Набережные Челны']];
 
   // ===== Утилиты =====
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  function plural(n, one, few, many) { var a = n % 10, b = n % 100; return a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many; }
   var rub = function (n) { return n.toLocaleString('ru-RU') + ' ₽'; };
   function goal(name) { try { if (YM_ID && window.ym) window.ym(YM_ID, 'reachGoal', name); } catch (e) {} }
   var PIN = '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
@@ -570,7 +576,7 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
   var CLOSE = '<button class="x" type="button" data-close aria-label="Закрыть"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#596067" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
 
   function plate(t) {
-    var cls = ['pl-in', t.lay, t.color || '', t.noreg ? 'noreg' : ''].join(' ');
+    var cls = ['pl-in', t.lay, t.color || '', t.noreg ? 'noreg' : '', t.bold ? 'bold' : ''].join(' ');
     var rc = 'r' + (t.reg.length === 2 ? ' r2' : '');
     var reg = t.noreg ? '' : '<div class="pl-reg"><span class="' + rc + '">' + t.reg + '</span><span class="pl-rus">RUS<i class="flag"></i></span></div>';
     if (t.lay === 'line') return '<div class="pl"><div class="' + cls + '"><div class="pl-main"><span class="pl-chars"><span class="l">' + t.l1 + '</span><span class="d">' + t.d + '</span><span class="l">' + t.l2 + '</span></span></div>' + reg + '</div></div>';
@@ -581,9 +587,10 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
   var W = { line: '88%', sq: '50%', mo: '40%' };
   $('#products').innerHTML = TYPES.map(function (t) {
     var price = t.p1 ? 'от ' + rub(t.p1) + '/шт' : rub(t.p2);
-    var note = t.p1 && t.p2 ? 'комплект ' + rub(t.p2) : (t.p1 ? 'за 1 шт' : 'за комплект');
-    return '<article class="pcard"><div class="pphoto"><div class="pw" style="width:' + W[t.lay] + '">' + plate(t) + '</div><h3>' + t.name + '</h3></div>' +
-      '<div class="pbody"><div class="tags"><span>Дубликат</span><span>' + t.type + '</span></div><p>' + t.desc + '</p></div>' +
+    var note = t.p1 && t.p2 ? 'комплект ' + (t.p2from ? 'от ' : '') + rub(t.p2) : (t.p1 ? 'за 1 шт' : 'за комплект');
+    var cover = t.plates ? '<div class="pw combo">' + t.plates.map(function (x) { return '<div style="width:' + x.w + '">' + plate(x) + '</div>'; }).join('') + '</div>' : '<div class="pw" style="width:' + W[t.lay] + '">' + plate(t) + '</div>';
+    return '<article class="pcard"><div class="pphoto">' + cover + '<h3>' + t.name + '</h3></div>' +
+      '<div class="pbody"><div class="tags"><span>' + (t.tag || 'Дубликат') + '</span><span>' + t.type + '</span></div><p>' + t.desc + '</p></div>' +
       '<div class="pfoot"><span><b>' + price + '</b><small>' + note + '</small></span><button class="btn btn-y" type="button" data-open="pick" data-type="' + t.id + '">Заказать</button></div></article>';
   }).join('') +
     '<button class="other" type="button" data-open="msg"><span class="top"><span class="plus"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F2C200" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><b>Нужен другой<br>тип номера?</b></span>' +
@@ -639,7 +646,7 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
       var c = CITIES[state.city];
       return head('Почитать отзывы', 'Выберите город и площадку, откроется в новой вкладке') + seg() + Object.keys(PLATFORMS).map(function (k) {
         var r = c.reviews[k];
-        return '<a class="opt" href="' + r[0] + '" target="_blank" rel="noopener"><img src="' + PLATFORMS[k][1] + '" alt=""><span><b>' + PLATFORMS[k][0] + '</b><small>' + r[2] + ' отзывов</small></span><span class="end">★ ' + r[1] + '</span></a>';
+        return '<a class="opt" href="' + r[0] + '" target="_blank" rel="noopener"><img src="' + PLATFORMS[k][1] + '" alt=""><span><b>' + PLATFORMS[k][0] + '</b><small>' + r[2] + ' ' + plural(r[2], 'отзыв', 'отзыва', 'отзывов') + '</small></span><span class="end">★ ' + r[1] + '</span></a>';
       }).join('');
     },
     call: function () {
@@ -685,7 +692,7 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
         '<a href="tel:' + c.tel + '" data-goal="order_call_' + k + '"><span class="pick-call"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span>Звонок</span></a></div>' +
         '<button class="link-btn" type="button" data-open="order" data-type="' + t.id + '">Или оставьте номер, перезвоним сами</button>';
     },
-    doc: function () { return head('Свидетельство об утверждении образца') + '<div class="sheet big-doc">СЮДА СКАН СВИДЕТЕЛЬСТВА</div>'; },
+    doc: function () { return head('Свидетельство МВД', 'АА № 013209 от 01.12.2025, срок действия три года') + '<img class="cert" src="img/certificate.webp" alt="Свидетельство МВД АА № 013209 об утверждении образца государственного регистрационного знака" width="903" height="1280">'; },
     menu: function () {
       return head('Меню') + '<nav class="menu-nav" aria-label="Разделы"><a href="#prices" data-close>Виды номеров и цены</a><a href="#trust" data-close>Почему нам доверяют</a><a href="#docs" data-close>Документы</a><a href="#faq" data-close>Вопросы</a><a href="#contacts" data-close>Контакты</a></nav>' +
         ['kzn', 'nch'].map(function (k) { var c = CITIES[k]; return '<a class="opt" href="tel:' + c.tel + '" data-goal="call_' + k + '"><span><b>' + c.name + '</b><small>' + c.addr + '</small></span><span class="end" style="font-size:17px">' + c.phone + '</span></a>'; }).join('');
@@ -695,6 +702,7 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
   function render() { body.innerHTML = views[current](); }
   function open(view, opts) {
     current = view;
+    dlg.classList.toggle('wide', view === 'doc');
     state.messenger = (opts && opts.messenger) || null;
     if (opts && opts.branch) state.branch = opts.branch;
     if (view !== 'msg' && view !== 'pick' && state.city === 'other') state.city = 'kzn';
