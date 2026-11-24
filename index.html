@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Изготовим дубликат госномера за 5 минут в Казани и Набережных Челнах. В реестре изготовителей МВД, по ГОСТ Р 50577-2018. Только СТС и паспорт. От 1000 ₽.">
 <meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <!-- Яндекс Метрика: вставьте код счётчика сюда и укажите номер в YM_ID внизу страницы -->
 <title>Дубликаты госномеров за 5 минут в Казани и Набережных Челнах | ГОСНОМЕР16</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,6 +62,7 @@ button{font:inherit;color:inherit}
 .stack3{display:flex;flex:none}
 .stack3 img{width:30px;height:30px;border-radius:50%;box-shadow:0 0 0 3px var(--ring,#121417)}
 .stack3 img+img{margin-left:-9px}
+.stack3 img{position:relative}.stack3 img:nth-child(1){z-index:3}.stack3 img:nth-child(2){z-index:2}
 
 /* header */
 .hdr{position:relative;z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
@@ -118,10 +124,15 @@ button{font:inherit;color:inherit}
 .lg3 img+img{margin-left:-8px}
 .rate b{font-family:var(--f-head);font-size:24px}
 .stars{color:var(--accent);font-size:13px;letter-spacing:1px}
-.cta{display:flex;gap:12px;flex-wrap:wrap;max-width:600px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;max-width:640px}
 .cta .btn{flex:1 1 220px;min-height:72px;border-radius:14px;font-size:18px}
 .cta .btn-y{box-shadow:0 14px 30px -14px rgba(242,194,0,.55)}
 .cta .btn small{display:block;font-size:14px;font-weight:400;color:var(--muted-d)}
+.cta .cta-main{flex:0 1 auto;padding:0 28px 0 22px}
+@media (max-width:640px){.cta .cta-main{flex:1 1 auto}}
+.cta .btn-y small{color:rgba(21,23,26,.72)}
+.mbar .two{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.mbar .two small{font-size:12px;font-weight:500;color:var(--muted);white-space:nowrap}
 .mosaic{min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:12px;height:600px}
 .mosaic figure{position:relative;margin:0;border-radius:20px;overflow:hidden;background:#24282C}
 .mosaic figure:first-child{grid-row:1/3}
@@ -158,6 +169,10 @@ button{font:inherit;color:inherit}
 .track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
 .track::-webkit-scrollbar{display:none}
 .slide{flex:none;width:270px;height:380px;border-radius:16px;scroll-snap-align:start;position:relative;overflow:hidden;display:grid;place-items:center}
+.slide{display:block;padding:0;border:0;background:#24282C;cursor:zoom-in;width:auto!important;height:440px}
+.slide img{display:block;width:auto;height:100%;max-width:none;transition:transform .3s}
+@media (max-width:640px){.slide{height:400px}}
+.slide:hover img{transform:scale(1.03)}
 .slide.ph{background:repeating-linear-gradient(135deg,#55595E 0 14px,#4E5257 14px 28px);color:#EDEEEA;font-weight:600}
 .slide.rv{background:var(--white);border:1px solid var(--line);color:var(--muted);font-weight:600}
 .slide .tag{position:absolute;left:12px;top:12px;display:flex;align-items:center;gap:8px;padding:5px 10px 5px 5px;border-radius:99px;background:var(--bg);font-size:12px;font-weight:600;color:var(--ink)}
@@ -173,8 +188,14 @@ button{font:inherit;color:inherit}
 @media (max-width:640px){.grid3{grid-template-columns:1fr}}
 .pcard{display:flex;flex-direction:column;border-radius:20px;background:var(--white);color:var(--ink);overflow:hidden;transition:transform .15s}
 .pcard:hover{transform:translateY(-3px)}
-.pphoto{position:relative;margin-bottom:-1px;height:240px;display:grid;place-items:center;padding:0 28px 40px;background:radial-gradient(ellipse at 50% 45%,#3A3F45 0%,#24282C 70%),#24282C}
-.pphoto .pw{filter:drop-shadow(0 16px 18px rgba(0,0,0,.55));transform:rotate(-3deg)}
+.pphoto{position:relative;margin-bottom:-1px;height:240px;display:grid;place-items:center;padding:0 28px 40px;background:var(--white)}
+.pphoto .pw{filter:drop-shadow(0 12px 14px rgba(21,23,26,.22));transform:rotate(-3deg)}
+.pimg{position:absolute;left:20px;right:20px;top:16px;bottom:44px;width:calc(100% - 40px);height:calc(100% - 60px);object-fit:contain}
+.pimg.cover{left:0;right:0;top:0;bottom:0;width:100%;height:100%;object-fit:cover}
+.subnav{display:flex;flex-wrap:wrap;gap:8px}
+.subnav a{padding:9px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.22);color:var(--light);text-decoration:none;font-size:15px;font-weight:500}
+.subnav a:hover{border-color:var(--accent);color:var(--accent)}
+.sub-h{margin-top:40px;font-family:var(--f-head);font-weight:800;text-transform:uppercase;font-size:clamp(28px,3.4vw,44px);line-height:1}
 .pphoto h3{position:absolute;z-index:1;left:0;bottom:-2px;padding:14px 24px 6px;background:var(--white);border-top-right-radius:16px;font-family:var(--f-head);font-weight:800;font-size:24px;line-height:1.1;color:var(--ink);text-transform:uppercase}
 .pbody{flex:1;display:flex;flex-direction:column;gap:14px;padding:16px 24px 6px}
 .tags{display:flex;gap:8px;flex-wrap:wrap}
@@ -291,7 +312,7 @@ button{font:inherit;color:inherit}
 /* mobile bar */
 .mbar{display:none}
 @media (max-width:820px){
-  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--white);border-top:1px solid var(--line);
+  .mbar{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--white);border-top:1px solid var(--line);
     padding:10px max(12px, env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px, env(safe-area-inset-left,0px))}
   .mbar .btn{min-height:50px;padding:0 10px;font-size:16px;justify-content:center;gap:8px}
   .mbar .stack3 img{width:26px;height:26px;position:relative;box-shadow:0 0 0 2px var(--ring)}
@@ -299,6 +320,16 @@ button{font:inherit;color:inherit}
   .mbar .stack3 img:nth-child(1){z-index:3}.mbar .stack3 img:nth-child(2){z-index:2}
   body{padding-bottom:80px}
 }
+
+@media (max-width:340px){.mbar .btn{padding:0 6px;gap:6px;font-size:15px}.mbar .stack3 img{width:22px;height:22px}.mbar .stack3 img+img{margin-left:-6px}}
+
+/* cookie */
+.cookie{position:fixed;z-index:56;right:max(16px, env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:24px;max-width:min(480px, calc(100vw - 32px));padding:12px 12px 12px 22px;border-radius:14px;background:#EBEBE8;color:var(--ink);font-size:15px;line-height:1.4;box-shadow:0 12px 30px -14px rgba(0,0,0,.4)}
+.cookie[hidden]{display:none}
+.cookie a{color:inherit;text-underline-offset:3px}
+.cookie .btn{flex:none;min-height:42px;margin-left:auto;padding:0 24px;font-size:15px;background:transparent;border-color:#9A9E98}
+.cookie .btn:hover{border-color:var(--ink)}
+@media (max-width:820px){.cookie{left:12px;right:12px;max-width:none;bottom:calc(84px + env(safe-area-inset-bottom,0px));padding-left:16px;gap:12px}}
 
 /* dialogs */
 .dlg{border:0;padding:0;border-radius:18px;width:min(420px, calc(100vw - 32px));max-height:calc(100dvh - 32px);background:var(--white);color:var(--ink);box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
@@ -410,8 +441,7 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
           <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9CCCF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
         </button>
         <div class="cta">
-          <button class="btn btn-y" type="button" data-open="order">Оставить заявку</button>
-          <button class="btn btn-od" type="button" data-open="msg" style="--ring:#121417"><span class="stack3"><img src="img/whatsapp.svg" alt=""><img src="img/telegram.svg" alt=""><img src="img/max.svg" alt=""></span><span>Написать<small>Ответим быстро</small></span></button>
+          <button class="btn btn-y cta-main" type="button" data-open="msg" style="--ring:#F2C200"><span class="stack3"><img src="img/max.svg" alt=""><img src="img/telegram.svg" alt=""><img src="img/whatsapp.svg" alt=""></span><span>Заказать в мессенджере<small>Ответим быстро</small></span></button>
         </div>
       </div>
       <div class="mosaic">
@@ -434,7 +464,7 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
           <span class="sheet"><img src="img/certificate-thumb.webp" alt="" width="84" height="119"></span>
           <span class="zoom"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8v6M8 11h6"/></svg></span>
         </button>
-        <span style="display:flex;flex-direction:column;min-width:0"><span class="k">Реестр изготовителей МВД</span><b style="font-weight:600">Свидетельство АА № 013209 от 01.12.2025</b><a class="btn btn-k" href="#registry" target="_blank" rel="noopener">Проверить в реестре<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></span>
+        <span style="display:flex;flex-direction:column;min-width:0"><span class="k">Реестр изготовителей МВД</span><b style="font-weight:600">Свидетельство АА № 013209 от 01.12.2025</b><a class="btn btn-k" href="http://stat.gibdd.ru/orgs/reg" target="_blank" rel="noopener">Проверить в реестре<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></span>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
@@ -445,8 +475,10 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
 
   <section id="prices" class="dark">
     <div class="wrap products">
-      <h2 class="h2">Виды номеров <span class="y">и цены</span></h2>
+      <div class="sec-head"><h2 class="h2">Номера, рамки <span class="y">и цены</span></h2><nav class="subnav" aria-label="Разделы каталога"><a href="#products">Номера</a><a href="#frames-h">Рамки и крепления</a></nav></div>
       <div class="grid3" id="products"></div>
+      <h3 class="sub-h" id="frames-h">Рамки <span class="y">и крепления</span></h3>
+      <div class="grid3" id="frames"></div>
     </div>
   </section>
 
@@ -471,14 +503,13 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
     <div class="wrap sec">
       <div class="sec-head"><h2 class="h2">Порядок получения номеров</h2></div>
       <ol class="steps">
-        <li><b class="num">1</b><span class="time">1 минута</span><h3>Заявка</h3><p>На сайте, по телефону или в мессенджере. Можно сразу прислать фото СТС.</p></li>
+        <li><b class="num">1</b><span class="time">1 минута</span><h3>Пишете нам</h3><p>В MAX, Telegram или WhatsApp, можно сразу с фото СТС. Или звоните.</p></li>
         <li><b class="num">2</b><span class="time">2-3 минуты</span><h3>Сверка документов</h3><p>Проверяем, что номер закреплён за вашей машиной, и называем цену.</p></li>
         <li><b class="num">3</b><span class="time">5 минут</span><h3>Изготовление</h3><p>Делаем табличку при вас на сертифицированном оборудовании.</p></li>
         <li><b class="num">4</b><span class="time">сразу</span><h3>Получение</h3><p>Забираете в точке или получаете курьером. Оплата при получении.</p></li>
       </ol>
       <div class="row-btns">
-        <button class="btn btn-y" type="button" data-open="order" style="min-height:56px;padding:0 26px">Оставить заявку</button>
-        <button class="btn btn-o" type="button" data-open="msg" style="min-height:56px;--ring:#FFFFFF"><span class="stack3"><img src="img/whatsapp.svg" alt=""><img src="img/telegram.svg" alt=""><img src="img/max.svg" alt=""></span>Написать</button>
+        <button class="btn btn-y" type="button" data-open="msg" style="min-height:56px;padding:0 24px;--ring:#F2C200"><span class="stack3"><img src="img/max.svg" alt=""><img src="img/telegram.svg" alt=""><img src="img/whatsapp.svg" alt=""></span>Заказать в мессенджере</button>
       </div>
     </div>
   </section>
@@ -494,16 +525,16 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
         <details><summary>Нужно ли сдавать старые номера?<i aria-hidden="true"></i></summary><p>Нет, старые таблички остаются у вас. Если они повреждены, лучше их утилизировать, чтобы никто ими не воспользовался.</p></details>
         <details><summary>Номер украли. Можно просто сделать дубликат?<i aria-hidden="true"></i></summary><p>Сделать можно, ездить будете законно. Но украденную табличку могут повесить на другую машину. Поэтому при краже советуем заявить в полицию: если номер объявят в розыск, его меняют уже через ГИБДД.</p></details>
         <details><summary>Можно без СТС?<i aria-hidden="true"></i></summary><p>Нет. Нужен СТС или ПТС (бумажный или выписка из ЭПТС): по нему мы сверяем, что номер закреплён за машиной.</p></details>
-        <details><summary>Можно заказать по фото документов?<i aria-hidden="true"></i></summary><p>Да. Пришлите фото СТС в мессенджер или прикрепите к заявке. Оригинал покажете при получении, в том числе курьеру.</p></details>
+        <details><summary>Можно заказать по фото документов?<i aria-hidden="true"></i></summary><p>Да. Пришлите фото СТС в мессенджер. Оригинал покажете при получении, в том числе курьеру.</p></details>
         <details><summary>Есть доставка?<i aria-hidden="true"></i></summary><p>Да. Курьер по Казани и Набережным Челнам в день заказа, по России отправляем СДЭК после предоплаты.</p></details>
-        <details><summary>Сколько служит дубликат?<i aria-hidden="true"></i></summary><p>Столько же, сколько заводской номер: та же алюминиевая основа, светоотражающая плёнка и тиснёные символы. Гарантия [N] лет.</p></details>
+        <details><summary>Сколько служит дубликат?<i aria-hidden="true"></i></summary><p>Столько же, сколько заводской номер: та же алюминиевая основа, светоотражающая плёнка и тиснёные символы.</p></details>
       </div>
     </div>
   </section>
 
   <section id="contacts" class="dark">
     <div class="wrap sec">
-      <div class="sec-head"><span class="eb" style="color:var(--accent)">Контакты</span><h2 class="h2">Приезжайте, номер будет готов <span class="y">за 5 минут</span></h2><div class="deliv"><p>Нет времени заехать? Привезём номер курьером в день заказа по Казани и Набережным Челнам, по России отправим СДЭК.</p><button class="btn btn-y" type="button" data-open="order" data-delivery="1">Заказать доставку</button></div></div>
+      <div class="sec-head"><span class="eb" style="color:var(--accent)">Контакты</span><h2 class="h2">Приезжайте, номер будет готов <span class="y">за 5 минут</span></h2><div class="deliv"><p>Нет времени заехать? Привезём номер курьером в день заказа по Казани и Набережным Челнам, по России отправим СДЭК.</p><button class="btn btn-y" type="button" data-open="msg">Заказать доставку</button></div></div>
       <div class="branches" id="branches"></div>
     </div>
   </section>
@@ -516,20 +547,22 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
         <span style="font-family:var(--f-logo);font-weight:700;font-size:22px;color:#FFFFFF">ГОСНОМЕР16</span>
         <span style="font-size:14px;max-width:32ch">Дубликаты госномеров в Казани и Набережных Челнах. Свидетельство МВД АА № 013209 от 01.12.2025.</span>
       </div>
-      <nav aria-label="Разделы сайта" style="display:flex;flex-direction:column;gap:8px;font-size:15px"><a href="#prices">Виды номеров и цены</a><a href="#docs">Документы</a><a href="#how">Порядок получения</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a></nav>
+      <nav aria-label="Разделы сайта" style="display:flex;flex-direction:column;gap:8px;font-size:15px"><a href="#prices">Номера, рамки и цены</a><a href="#docs">Документы</a><a href="#how">Порядок получения</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a></nav>
       <div style="display:flex;flex-direction:column;gap:6px;font-size:15px"><span style="font-size:12px;color:#7E848A">КАЗАНЬ</span><a href="tel:+79874140815" data-goal="call_kzn" style="color:#FFFFFF;font-weight:600">+7 (987) 414-08-15</a><span style="font-size:12px;color:#7E848A;margin-top:8px">НАБ. ЧЕЛНЫ</span><a href="tel:+79874140815" data-goal="call_nch" style="color:#FFFFFF;font-weight:600">+7 (987) 414-08-15</a></div>
       <div class="msgs"><button type="button" data-open="msg" data-messenger="wa" aria-label="WhatsApp"><img src="img/whatsapp.svg" alt=""></button><button type="button" data-open="msg" data-messenger="tg" aria-label="Telegram"><img src="img/telegram.svg" alt=""></button><button type="button" data-open="msg" data-messenger="max" aria-label="MAX"><img src="img/max.svg" alt=""></button></div>
     </div>
     <div class="ftr-bot">
       <span>© 2026 ГОСНОМЕР16 · ИП Сулейманов Р. Р. · ИНН 163902148450 · ОГРНИП 324169000199471</span>
-      <span style="display:flex;gap:20px;flex-wrap:wrap"><a href="#privacy">Политика конфиденциальности</a><a href="#consent">Согласие на обработку данных</a></span>
+      <span style="display:flex;gap:20px;flex-wrap:wrap"><a href="policy.html">Политика конфиденциальности</a></span>
     </div>
   </div>
 </footer>
 
+<div class="cookie" id="cookie" role="region" aria-label="Уведомление о cookie" hidden><span>Мы используем cookie, <a href="policy.html">подробнее</a></span><button class="btn btn-o" type="button" id="cookie-ok">OK</button></div>
+
 <nav class="mbar" aria-label="Быстрые действия">
   <button class="btn btn-o" type="button" data-open="call"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Позвонить</button>
-  <button class="btn btn-o" type="button" data-open="msg" style="--ring:#FFFFFF"><span class="stack3"><img src="img/max.svg" alt=""><img src="img/telegram.svg" alt=""><img src="img/whatsapp.svg" alt=""></span>Написать</button>
+  <button class="btn btn-o" type="button" data-open="msg" style="--ring:#FFFFFF"><span class="stack3"><img src="img/max.svg" alt=""><img src="img/telegram.svg" alt=""><img src="img/whatsapp.svg" alt=""></span><span class="two">Заказать<small>в мессенджере</small></span></button>
 </nav>
 
 <dialog class="dlg" id="dlg"><div class="dlg-in" id="dlg-body"></div></dialog>
@@ -538,15 +571,16 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
 (function () {
   // ===== Данные. Меняйте здесь =====
   var YM_ID = 0; // номер счётчика Яндекс Метрики
+  var MAX = 'https://max.ru/u/f9LHodD0cOJBD-U8hFXW10XF3NCHYBMcMcWoq5FdJoaizUEe0cYSSVbwm-M'; // один диалог MAX для обоих филиалов
   var AVITO = 'https://www.avito.ru/user/c319f3704bac3b7433e767b31da7cc63/profile'; // одна ссылка на Авито для обоих филиалов
   var CITIES = {
     kzn: { name: 'Казань', addr: 'ул. Техническая, д. 120Дк1', hours: 'Пн-сб с 9:00 до 18:00, без перерыва<br>Вс выходной', phone: '+7 (987) 414-08-15', tel: '+79874140815',
-      wa: 'https://wa.me/79874140815', tg: 'https://t.me/+79874140815', max: '#max-kazan', photo: '',
-      route: 'https://yandex.ru/maps/?rtext=~55.753243%2C49.131761&rtt=auto',
+      wa: 'https://wa.me/79874140815', tg: 'https://t.me/+79874140815', max: MAX, photo: 'img/branch-nch.webp',
+      route: 'https://yandex.ru/profile/157398633406',
       reviews: { yandex: ['https://yandex.ru/maps/org/gosnomer16/157398633406/reviews/', '5,0', 45], gis: ['https://2gis.ru/kazan/firm/70000001106075450/tab/reviews', '5,0', 38], avito: [AVITO, '5,0', 220] } },
     nch: { name: 'Набережные Челны', addr: 'ул. Машиностроительная, д. 22, стр. 5', hours: 'Пн, ср, чт, пт, сб с 8:00 до 18:00<br>Вт с 8:00 до 20:00<br>Вс с 10:00 до 14:00<br>Без перерыва', phone: '+7 (987) 414-08-15', tel: '+79874140815',
-      wa: 'https://wa.me/79874140815', tg: 'https://t.me/+79874140815', max: '#max-chelny', photo: '',
-      route: 'https://yandex.ru/maps/?rtext=~55.725372%2C52.421378&rtt=auto',
+      wa: 'https://wa.me/79874140815', tg: 'https://t.me/+79874140815', max: MAX, photo: 'img/branch-kzn.webp',
+      route: 'https://yandex.ru/profile/91595394316',
       reviews: { yandex: ['https://yandex.ru/maps/org/gos_nomer16/91595394316/reviews/', '4,9', 24], gis: ['https://2gis.ru/nabchelny/firm/70000001093673769/tab/reviews', '5,0', 194], avito: [AVITO, '5,0', 220] } }
   };
   var DELIVERY_CITY = 'kzn'; // какой филиал отвечает в мессенджерах клиентам из других городов (доставка)
@@ -563,7 +597,15 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
     { id: 't2', name: 'Прицепной', type: 'Тип 2', desc: 'Одна табличка на заднюю часть прицепа или полуприцепа.', p1: 1000, lay: 'line', l1: 'АА', d: '7777', l2: '', reg: '16' },
     { id: 'souv', name: 'Сувенирный', tag: 'Сувенир', type: 'Любой текст', desc: 'Номер с вашим текстом или датой: в подарок, для интерьера или фотосессии. Не для установки на автомобиль.', p1: 1300, p2: 2500, p2from: true, lay: 'line', l1: '', d: 'ПАПА', l2: '', reg: '16' }
   ];
-  var SLIDES = [['r', 'yandex'], ['p', 'Казань'], ['r', 'gis'], ['p', 'Набережные Челны'], ['r', 'avito'], ['p', 'Казань'], ['r', 'yandex'], ['p', 'Набережные Челны']];
+  var FRAMES = [
+    { id: 'fr-std', kind: 'frame', name: 'Пластиковая рамка', tag: 'Рамка', type: 'Тип 1', desc: 'Чёрный ударопрочный ABS-пластик: не трескается на морозе и не выцветает. Без крупных логотипов, номер можно поставить без новых отверстий.', p1: 300, exact: true, img: 'img/frame-std.webp' },
+    { id: 'fr-book', kind: 'frame', name: 'Рамка-книжка', tag: 'Рамка', type: 'Тип 1А', desc: 'Для квадратного номера 290 × 170 мм. Механизм «книжка»: номер ставится без дополнительных креплений. Чёрный пластик без надписей.', p1: 600, exact: true, img: 'img/frame-book.webp' },
+    { id: 'fr-moto', kind: 'frame', name: 'Рамка для мотономера', tag: 'Рамка', type: 'Тип 4', desc: 'Для мини-номера 190 × 145 мм на мотоцикл или скутер. Защищает номер и надёжно его держит.', img: 'img/frame-moto.webp' },
+    { id: 'fr-magnet', kind: 'frame', name: 'Магнитные рамки', tag: 'Рамка', type: 'Тип 1', desc: 'Номер ставится и снимается за 10 секунд, держат неодимовые магниты. Цена за комплект.', p2: 3000, img: 'img/frame-magnet.webp' },
+    { id: 'fr-invisible', kind: 'frame', name: 'Рамка-невидимка', tag: 'Крепление', type: 'Без рамки', desc: 'Безрамочное крепление из ударопрочного поликарбоната: номер как будто парит на кузове, под ним не скапливается грязь.', p2: 1600, img: 'img/frame-invisible.webp', fit: 'cover' }
+  ];
+  var ALL = TYPES.concat(FRAMES);
+  var SLIDES = ['img/review-1.webp', 'img/review-2.webp', 'img/review-3.webp', 'img/review-4.webp']; // фото клиентов и скрины отзывов
 
   // ===== Утилиты =====
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -585,22 +627,27 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
 
   // ===== Рендер секций =====
   var W = { line: '88%', sq: '50%', mo: '40%' };
-  $('#products').innerHTML = TYPES.map(function (t) {
-    var price = t.p1 ? 'от ' + rub(t.p1) + '/шт' : rub(t.p2);
-    var note = t.p1 && t.p2 ? 'комплект ' + (t.p2from ? 'от ' : '') + rub(t.p2) : (t.p1 ? 'за 1 шт' : 'за комплект');
-    var cover = t.plates ? '<div class="pw combo">' + t.plates.map(function (x) { return '<div style="width:' + x.w + '">' + plate(x) + '</div>'; }).join('') + '</div>' : '<div class="pw" style="width:' + W[t.lay] + '">' + plate(t) + '</div>';
+  function card(t) {
+    var price = t.p1 ? (t.exact ? '' : 'от ') + rub(t.p1) + '/шт' : t.p2 ? rub(t.p2) : 'Цена по запросу';
+    var note = t.p1 && t.p2 ? 'комплект ' + (t.p2from ? 'от ' : '') + rub(t.p2) : (t.p1 ? 'за 1 шт' : t.p2 ? 'за комплект' : 'уточним в мессенджере');
+    var cover = t.img ? '<img class="pimg' + (t.fit === 'cover' ? ' cover' : '') + '" src="' + t.img + '" alt="' + t.name + '" loading="lazy">'
+      : t.plates ? '<div class="pw combo">' + t.plates.map(function (x) { return '<div style="width:' + x.w + '">' + plate(x) + '</div>'; }).join('') + '</div>'
+      : '<div class="pw" style="width:' + W[t.lay] + '">' + plate(t) + '</div>';
     return '<article class="pcard"><div class="pphoto">' + cover + '<h3>' + t.name + '</h3></div>' +
       '<div class="pbody"><div class="tags"><span>' + (t.tag || 'Дубликат') + '</span><span>' + t.type + '</span></div><p>' + t.desc + '</p></div>' +
       '<div class="pfoot"><span><b>' + price + '</b><small>' + note + '</small></span><button class="btn btn-y" type="button" data-open="pick" data-type="' + t.id + '">Заказать</button></div></article>';
-  }).join('') +
+  }
+  if ($('#products')) {
+  $('#frames').innerHTML = FRAMES.map(card).join('');
+  $('#products').innerHTML = TYPES.map(card).join('') +
     '<button class="other" type="button" data-open="msg"><span class="top"><span class="plus"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F2C200" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><b>Нужен другой<br>тип номера?</b></span>' +
     '<span class="bot"><span class="eb" style="color:#7A8068">Не нашли нужный вариант?</span><b>Поможем разобраться</b><span>Пришлите фото старого номера или опишите технику. Подскажем, можно ли сделать и сколько стоит.</span><span class="row"><b style="font-size:16px">Индивидуальный запрос</b><span class="go">' + ARROW + '</span></span></span></button>';
 
-  $('#track').innerHTML = SLIDES.map(function (s) {
-    if (s[0] === 'p') return '<div class="slide ph" role="img" aria-label="Фото клиента с номерами">Тут фото с номерами<span class="city">' + s[1] + '</span></div>';
-    var p = PLATFORMS[s[1]];
-    return '<div class="slide rv" role="img" aria-label="Скрин отзыва">Тут скрин отзыва<span class="tag"><img src="' + p[1] + '" alt="">' + p[0] + '</span></div>';
+  $('#track').innerHTML = SLIDES.map(function (src, i) {
+    return '<button class="slide" type="button" data-open="photo" data-src="' + src + '" aria-label="Открыть отзыв ' + (i + 1) + '"><img src="' + src + '" alt="Отзыв клиента ГОСНОМЕР16" loading="lazy" height="440"></button>';
   }).join('');
+  function syncArrows() { var t = $('#track'), a = $('.arrows'); if (a) a.style.visibility = t.scrollWidth > t.clientWidth + 4 ? 'visible' : 'hidden'; }
+  window.addEventListener('resize', syncArrows); syncArrows();
 
   $('#branches').innerHTML = ['kzn', 'nch'].map(function (k) {
     var c = CITIES[k];
@@ -610,12 +657,21 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
       '<div class="acts"><a href="' + c.wa + '" target="_blank" rel="noopener" data-goal="wa_' + k + '" aria-label="WhatsApp ' + c.name + '"><img src="img/whatsapp.svg" alt=""></a>' +
       '<a href="' + c.tg + '" target="_blank" rel="noopener" data-goal="tg_' + k + '" aria-label="Telegram ' + c.name + '"><img src="img/telegram.svg" alt=""></a>' +
       '<a href="' + c.max + '" target="_blank" rel="noopener" data-goal="max_' + k + '" aria-label="MAX ' + c.name + '"><img src="img/max.svg" alt=""></a>' +
-      '<a class="btn btn-od" href="' + c.route + '" target="_blank" rel="noopener">Построить маршрут<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F2F3EF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></article>';
+      '<a class="btn btn-od" href="' + c.route + '" target="_blank" rel="noopener">Посмотреть на Я.картах<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F2F3EF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></article>';
   }).join('');
+  }
 
   document.querySelectorAll('[data-slide]').forEach(function (b) {
     b.addEventListener('click', function () { $('#track').scrollBy({ left: Number(b.dataset.slide) * 286, behavior: 'smooth' }); });
   });
+
+  // ===== Плашка cookie =====
+  (function () {
+    var box = $('#cookie'), seen = false;
+    try { seen = localStorage.getItem('cookie_ok') === '1'; } catch (e) {}
+    if (!seen) box.hidden = false;
+    $('#cookie-ok').addEventListener('click', function () { box.hidden = true; try { localStorage.setItem('cookie_ok', '1'); } catch (e) {} });
+  })();
 
   // ===== Диалоги =====
   var dlg = $('#dlg'), body = $('#dlg-body');
@@ -655,15 +711,6 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
         return '<a class="opt" href="tel:' + c.tel + '" data-goal="call_' + k + '"><span><b>' + c.name + '</b><small>' + c.addr + '</small></span><span class="end" style="font-size:19px">' + c.phone + '</span></a>';
       }).join('');
     },
-    order: function () {
-      if (state.sent) {
-        return head('Заявка принята') + '<div class="ok"><b>Спасибо!</b><span>Перезвоним на ' + esc(state.phone) + ' в течение 5 минут в рабочее время.</span></div><button class="btn btn-k" type="button" data-close>Хорошо</button>';
-      }
-      return head('Оставить заявку', 'Перезвоним за 5 минут в рабочее время и ответим на все вопросы') +
-        '<div class="field"><label for="f-phone">Телефон</label><input class="inp" id="f-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" value="' + esc(state.phone) + '"><span class="err" id="f-err" hidden></span></div>' +
-        '<button class="btn btn-y" type="button" id="f-send" style="min-height:54px">Перезвоните мне</button>' +
-        '<label class="chk sm"><input type="checkbox" id="f-agree"' + (state.agree ? ' checked' : '') + '><span>Я согласен с <a href="#privacy">политикой обработки персональных данных</a></span></label><span class="err" id="f-agree-err" hidden>Отметьте согласие, чтобы отправить заявку</span>';
-    },
     branch: function () {
       var k = state.branch, c = CITIES[k];
       var ph = c.photo ? '<div class="dlg-photo"><img src="' + c.photo + '" alt="Филиал ГОСНОМЕР16, ' + c.name + '"></div>' : '<div class="dlg-photo" role="img" aria-label="Место для фото филиала">ФОТО ФИЛИАЛА</div>';
@@ -672,7 +719,7 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
         '<div class="br-msg">' + ['max', 'tg', 'wa'].map(function (m) {
           return '<a href="' + c[m] + '" target="_blank" rel="noopener" data-goal="' + m + '_' + k + '" aria-label="' + MSG[m][0] + ' ' + c.name + '"><img src="' + MSG[m][1] + '" alt=""></a>';
         }).join('') + '<span>Пишите, мы на связи</span></div>' +
-        '<a class="btn btn-y" href="' + c.route + '" target="_blank" rel="noopener" data-goal="route_' + k + '" style="min-height:54px">Маршрут в Яндекс Картах' + ARROW + '</a>';
+        '<a class="btn btn-y" href="' + c.route + '" target="_blank" rel="noopener" data-goal="route_' + k + '" style="min-height:54px">Посмотреть на Я.картах' + ARROW + '</a>';
     },
     addrs: function () {
       return head('Наши филиалы', 'Выберите филиал: фото, график работы и маршрут') + ['kzn', 'nch'].map(function (k) {
@@ -681,20 +728,21 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
       }).join('');
     },
     pick: function () {
-      var t = TYPES.find(function (x) { return x.id === state.type; }) || TYPES[0];
+      var t = ALL.find(function (x) { return x.id === state.type; }) || TYPES[0];
       var k = state.city === 'other' ? DELIVERY_CITY : state.city, c = CITIES[k];
-      var txt = encodeURIComponent('Здравствуйте! Хочу заказать дубликат номера: ' + t.name + ' (' + t.type + ')');
+      var txt = encodeURIComponent('Здравствуйте! ' + (t.kind === 'frame' ? 'Интересует: ' : 'Хочу заказать дубликат номера: ') + t.name + ' (' + t.type + ')');
       var items = [['max', c.max, 'MAX', 'img/max.svg'], ['tg', c.tg, 'Telegram', 'img/telegram.svg'], ['wa', c.wa + '?text=' + txt, 'WhatsApp', 'img/whatsapp.svg']];
       return head('Для заказа', 'Выберите город и удобный способ связи') + seg(true) +
         '<div class="pick">' + items.map(function (i) {
           return '<a href="' + i[1] + '" target="_blank" rel="noopener" data-goal="order_' + i[0] + '_' + k + '"><img src="' + i[3] + '" alt=""><span>' + i[2] + '</span></a>';
         }).join('') +
         '<a href="tel:' + c.tel + '" data-goal="order_call_' + k + '"><span class="pick-call"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#15171A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span>Звонок</span></a></div>' +
-        '<button class="link-btn" type="button" data-open="order" data-type="' + t.id + '">Или оставьте номер, перезвоним сами</button>';
+        '';
     },
+    photo: function () { return head('Отзыв клиента') + '<img class="cert" src="' + state.src + '" alt="Отзыв клиента ГОСНОМЕР16">'; },
     doc: function () { return head('Свидетельство МВД', 'АА № 013209 от 01.12.2025, срок действия три года') + '<img class="cert" src="img/certificate.webp" alt="Свидетельство МВД АА № 013209 об утверждении образца государственного регистрационного знака" width="903" height="1280">'; },
     menu: function () {
-      return head('Меню') + '<nav class="menu-nav" aria-label="Разделы"><a href="#prices" data-close>Виды номеров и цены</a><a href="#trust" data-close>Почему нам доверяют</a><a href="#docs" data-close>Документы</a><a href="#faq" data-close>Вопросы</a><a href="#contacts" data-close>Контакты</a></nav>' +
+      return head('Меню') + '<nav class="menu-nav" aria-label="Разделы"><a href="#prices" data-close>Номера, рамки и цены</a><a href="#trust" data-close>Почему нам доверяют</a><a href="#docs" data-close>Документы</a><a href="#faq" data-close>Вопросы</a><a href="#contacts" data-close>Контакты</a></nav>' +
         ['kzn', 'nch'].map(function (k) { var c = CITIES[k]; return '<a class="opt" href="tel:' + c.tel + '" data-goal="call_' + k + '"><span><b>' + c.name + '</b><small>' + c.addr + '</small></span><span class="end" style="font-size:17px">' + c.phone + '</span></a>'; }).join('');
     }
   };
@@ -702,7 +750,8 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
   function render() { body.innerHTML = views[current](); }
   function open(view, opts) {
     current = view;
-    dlg.classList.toggle('wide', view === 'doc');
+    dlg.classList.toggle('wide', view === 'doc' || view === 'photo');
+    if (opts && opts.src) state.src = opts.src;
     state.messenger = (opts && opts.messenger) || null;
     if (opts && opts.branch) state.branch = opts.branch;
     if (view !== 'msg' && view !== 'pick' && state.city === 'other') state.city = 'kzn';
@@ -710,44 +759,20 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
     if (view === 'order') { state.sent = false; state.type = (opts && opts.type) || null; state.delivery = !!(opts && opts.delivery); }
     render();
     if (!dlg.open) { try { dlg.showModal(); } catch (e) { dlg.setAttribute('open', ''); } }
-    var f = body.querySelector('#f-phone, .opt, .seg button, .x'); if (f) f.focus();
+    var f = body.querySelector('.opt, .seg button, .x'); if (f) f.focus();
   }
   function close() { if (dlg.open) dlg.close(); }
 
   document.addEventListener('click', function (e) {
     var g = e.target.closest('[data-goal]'); if (g) goal(g.dataset.goal);
     var o = e.target.closest('[data-open]');
-    if (o) { e.preventDefault(); open(o.dataset.open, { messenger: o.dataset.messenger, type: o.dataset.type, delivery: o.dataset.delivery, branch: o.dataset.branch }); }
+    if (o) { e.preventDefault(); open(o.dataset.open, { messenger: o.dataset.messenger, type: o.dataset.type, delivery: o.dataset.delivery, branch: o.dataset.branch, src: o.dataset.src }); }
   });
   dlg.addEventListener('click', function (e) {
     if (e.target === dlg) return close();
     if (e.target.closest('[data-close]')) { var a = e.target.closest('a[href^="#"]'); close(); if (a) { var t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView(); } return; }
     var c = e.target.closest('[data-city]'); if (c) { state.city = c.dataset.city; render(); return; }
     var q = e.target.closest('[data-qty]'); if (q) { state.qty = Number(q.dataset.qty); render(); return; }
-    if (e.target.closest('#f-send')) {
-      var digits = state.phone.replace(/\D/g, '');
-      if (digits.length !== 11) { var er = $('#f-err'); er.textContent = 'Введите номер полностью: +7 и 10 цифр'; er.hidden = false; $('#f-phone').focus(); return; }
-      if (!state.agree) { $('#f-agree-err').hidden = false; $('#f-agree').focus(); return; }
-      var tp = TYPES.find(function (x) { return x.id === state.type; });
-      var order = { delivery: state.delivery, type: tp ? tp.name + ' (' + tp.type + ')' : null, phone: state.phone, page: location.href };
-      // Подключите отправку заявки: fetch('/api/order', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(order) })
-      // или отправку в Telegram-бот или CRM. Пока заявка выводится в консоль.
-      console.log('order', order);
-      goal('order_submit');
-      state.sent = true; render();
-    }
-  });
-  dlg.addEventListener('change', function (e) { if (e.target.id === 'f-agree') { state.agree = e.target.checked; if (state.agree) $('#f-agree-err').hidden = true; } });
-  dlg.addEventListener('input', function (e) {
-    if (e.target.id !== 'f-phone') return;
-    var d = e.target.value.replace(/\D/g, '');
-    if (d[0] === '8') d = '7' + d.slice(1);
-    if (d && d[0] !== '7') d = '7' + d;
-    d = d.slice(0, 11);
-    var a = d.slice(1, 4), b = d.slice(4, 7), c = d.slice(7, 9), f = d.slice(9, 11);
-    state.phone = !d ? '' : '+7' + (a ? ' (' + a : '') + (a.length === 3 ? ')' : '') + (b ? ' ' + b : '') + (c ? '-' + c : '') + (f ? '-' + f : '');
-    e.target.value = state.phone;
-    var er = $('#f-err'); if (er) er.hidden = true;
   });
 })();
 </script>
